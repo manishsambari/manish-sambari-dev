@@ -42,17 +42,17 @@ const Contact = () => {
     <section className="py-20 px-4">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Let's Build Something <span className="gradient-text">Amazing</span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 animate-fade-in">
+            Let's <span className="gradient-text">Connect</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Ready to turn your ideas into reality? Let's discuss your next project and create innovative solutions together.
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto animate-slide-up">
+            Let's discuss your next project and bring your ideas to life
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
           {/* Contact Information */}
-          <Card className="glass-card">
+          <Card className="glass-card hover:scale-105 transition-all duration-300 animate-fade-in">
             <CardHeader>
               <CardTitle className="text-2xl">Get In Touch</CardTitle>
               <p className="text-muted-foreground">
@@ -106,7 +106,7 @@ const Contact = () => {
           </Card>
 
           {/* Quick Actions */}
-          <Card className="glass-card">
+          <Card className="glass-card hover:scale-105 transition-all duration-300 animate-fade-in" style={{ animationDelay: '0.1s' }}>
             <CardHeader>
               <CardTitle className="text-2xl">Quick Actions</CardTitle>
               <p className="text-muted-foreground">
@@ -153,22 +153,6 @@ const Contact = () => {
           </Card>
         </div>
 
-        {/* Call to Action */}
-        <div className="text-center mt-16">
-          <Card className="glass-card max-w-2xl mx-auto">
-            <CardContent className="p-8">
-              <h3 className="text-2xl font-bold mb-4">Ready to Start Your Project?</h3>
-              <p className="text-muted-foreground mb-6">
-                Whether you need a full-stack web application, AI integration, or blockchain solution, 
-                I'm here to help bring your vision to life.
-              </p>
-              <Button size="lg" className="px-8 glow-effect">
-                <Mail className="w-5 h-5 mr-2" />
-                Start a Conversation
-              </Button>
-            </CardContent>
-          </Card>
-        </div>
       </div>
     </section>
   );

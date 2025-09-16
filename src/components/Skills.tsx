@@ -46,21 +46,21 @@ const Skills = () => {
     <section className="py-20 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Technical <span className="gradient-text">Expertise</span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 animate-fade-in">
+            My <span className="gradient-text">Skills</span>
           </h2>
-          <p className="text-xl text-muted-foreground">
-            A comprehensive toolkit for building modern applications
+          <p className="text-xl text-muted-foreground animate-slide-up">
+            Technologies and tools I use to build modern web applications
           </p>
         </div>
 
         {/* Skills Grid */}
         <div className="grid md:grid-cols-2 gap-8 mb-16">
           {skillCategories.map((category, index) => (
-            <Card key={index} className="glass-card group">
+            <Card key={index} className="glass-card group hover:scale-105 transition-all duration-300 animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
               <CardHeader>
                 <CardTitle className="text-xl flex items-center gap-3">
-                  <div className={`p-2 rounded-lg bg-gradient-to-r ${category.color} text-white`}>
+                  <div className={`p-2 rounded-lg bg-gradient-to-r ${category.color} text-white group-hover:scale-110 transition-transform`}>
                     {category.icon}
                   </div>
                   {category.title}
@@ -72,7 +72,7 @@ const Skills = () => {
                     <Badge 
                       key={skill} 
                       variant="secondary" 
-                      className="px-3 py-1 hover:bg-primary/10 transition-colors cursor-default"
+                      className="px-3 py-1 hover:bg-primary/10 hover:scale-105 transition-all duration-300 cursor-default"
                     >
                       {skill}
                     </Badge>
@@ -84,23 +84,19 @@ const Skills = () => {
         </div>
 
         {/* Core Competencies */}
-        <Card className="glass-card mb-16">
+        <Card className="glass-card mb-16 hover:scale-105 transition-all duration-300 animate-fade-in">
           <CardHeader>
             <CardTitle className="text-2xl text-center">Core Competencies</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="grid md:grid-cols-3 gap-6 text-center">
-              <div className="space-y-2">
+            <div className="grid md:grid-cols-2 gap-6 text-center">
+              <div className="space-y-2 hover:scale-105 transition-transform">
                 <h4 className="font-semibold text-primary">Full-Stack Development</h4>
                 <p className="text-sm text-muted-foreground">End-to-end web application development with modern frameworks</p>
               </div>
-              <div className="space-y-2">
-                <h4 className="font-semibold text-primary">AI Integration</h4>
-                <p className="text-sm text-muted-foreground">Implementing AI solutions for data analysis and automation</p>
-              </div>
-              <div className="space-y-2">
-                <h4 className="font-semibold text-primary">Blockchain Development</h4>
-                <p className="text-sm text-muted-foreground">Smart contracts and decentralized application development</p>
+              <div className="space-y-2 hover:scale-105 transition-transform">
+                <h4 className="font-semibold text-primary">Modern Web Technologies</h4>
+                <p className="text-sm text-muted-foreground">Building responsive, performant applications with cutting-edge tools</p>
               </div>
             </div>
           </CardContent>

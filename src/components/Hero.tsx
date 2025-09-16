@@ -23,19 +23,19 @@ const Hero = () => {
         {/* Main Heading */}
         <div className="space-y-4 animate-fade-in">
           <h1 className="text-5xl md:text-7xl font-bold leading-tight">
-            Building the Future with{" "}
-            <span className="gradient-text">Code</span>
+            Crafting Digital Solutions with{" "}
+            <span className="gradient-text">Innovation</span>
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto">
-            Full-Stack Developer & AI Enthusiast crafting innovative solutions 
-            for web3, fintech, and modern applications
+            Full-Stack Developer creating modern web applications 
+            with cutting-edge technologies and seamless user experiences
           </p>
         </div>
 
         {/* Tech Stack Badges */}
         <div className="flex flex-wrap justify-center gap-3 animate-slide-up">
-          {["React", "Node.js", "Python", "Next.js", "TailwindCSS", "AI/ML", "Blockchain"].map((tech) => (
-            <Badge key={tech} variant="outline" className="px-4 py-2 text-sm hover:bg-primary/10 transition-colors">
+          {["React", "Node.js", "Python", "Next.js", "MongoDB", "Express.js", "JavaScript"].map((tech) => (
+            <Badge key={tech} variant="outline" className="px-4 py-2 text-sm hover:bg-primary/10 transition-colors hover:scale-105 hover:glow-effect">
               {tech}
             </Badge>
           ))}
@@ -43,10 +43,19 @@ const Hero = () => {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up">
-          <Button size="lg" className="px-8 py-6 text-lg font-semibold glow-effect">
+          <Button 
+            size="lg" 
+            className="px-8 py-6 text-lg font-semibold glow-effect hover:scale-105 transition-all duration-300"
+            onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+          >
             View My Work
           </Button>
-          <Button variant="outline" size="lg" className="px-8 py-6 text-lg">
+          <Button 
+            variant="outline" 
+            size="lg" 
+            className="px-8 py-6 text-lg hover:scale-105 transition-all duration-300"
+            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+          >
             Get In Touch
           </Button>
         </div>
@@ -58,7 +67,7 @@ const Hero = () => {
             <div className="text-sm text-muted-foreground">Projects</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold text-primary">2+</div>
+            <div className="text-3xl font-bold text-primary">1+</div>
             <div className="text-sm text-muted-foreground">Years Experience</div>
           </div>
           <div className="text-center">

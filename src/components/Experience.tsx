@@ -68,17 +68,17 @@ const Experience = () => {
     <section className="py-20 px-4">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Professional <span className="gradient-text">Experience</span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 animate-fade-in">
+            Work <span className="gradient-text">Experience</span>
           </h2>
-          <p className="text-xl text-muted-foreground">
+          <p className="text-xl text-muted-foreground animate-slide-up">
             Building expertise through diverse projects and collaborations
           </p>
         </div>
 
         <div className="space-y-6">
           {experiences.map((exp, index) => (
-            <Card key={index} className="glass-card">
+            <Card key={index} className="glass-card hover:scale-105 transition-all duration-300 animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
               <CardHeader>
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                   <div className="space-y-2">
@@ -123,25 +123,41 @@ const Experience = () => {
 
         {/* Education Section */}
         <div className="mt-20">
-          <h3 className="text-3xl font-bold mb-8 text-center">
+          <h3 className="text-3xl font-bold mb-8 text-center animate-fade-in">
             <span className="gradient-text">Education</span>
           </h3>
           
-          <Card className="glass-card">
-            <CardHeader>
-              <CardTitle className="text-xl">B.E in Computer Engineering</CardTitle>
-              <div className="text-muted-foreground">
-                <p className="font-medium">Terna Engineering College, Navi Mumbai</p>
-                <p className="text-sm">CGPA: 7.20 • Expected: May 2025</p>
-              </div>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-2 text-sm text-muted-foreground">
-                <p><strong>HSC:</strong> B. N. N. College, Bhiwandi (89.50%)</p>
-                <p><strong>SSC:</strong> Vikas English Medium School, Bhiwandi (82.20%)</p>
-              </div>
-            </CardContent>
-          </Card>
+          <div className="space-y-4">
+            <Card className="glass-card hover:scale-105 transition-all duration-300 animate-fade-in">
+              <CardHeader>
+                <CardTitle className="text-xl">B.E in Computer Engineering</CardTitle>
+                <div className="text-muted-foreground">
+                  <p className="font-medium">Terna Engineering College, Navi Mumbai</p>
+                  <p className="text-sm">CGPA: 7.20 • Expected: May 2025</p>
+                </div>
+              </CardHeader>
+            </Card>
+            
+            <Card className="glass-card hover:scale-105 transition-all duration-300 animate-fade-in" style={{ animationDelay: '0.1s' }}>
+              <CardHeader>
+                <CardTitle className="text-xl">Higher Secondary Certificate (HSC)</CardTitle>
+                <div className="text-muted-foreground">
+                  <p className="font-medium">B. N. N. College, Bhiwandi</p>
+                  <p className="text-sm">Percentage: 89.50% • May 2021</p>
+                </div>
+              </CardHeader>
+            </Card>
+            
+            <Card className="glass-card hover:scale-105 transition-all duration-300 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+              <CardHeader>
+                <CardTitle className="text-xl">Secondary School Certificate (SSC)</CardTitle>
+                <div className="text-muted-foreground">
+                  <p className="font-medium">Vikas English Medium School, Bhiwandi</p>
+                  <p className="text-sm">Percentage: 82.20% • March 2019</p>
+                </div>
+              </CardHeader>
+            </Card>
+          </div>
         </div>
       </div>
     </section>
