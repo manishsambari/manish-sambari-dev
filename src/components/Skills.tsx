@@ -7,33 +7,39 @@ const Skills = () => {
     {
       title: "Programming Languages",
       icon: <Code className="w-6 h-6" />,
-      skills: ["Python", "JavaScript", "TypeScript", "SQL", "Solidity"],
+      skills: ["Python", "JavaScript", "SQL"],
       color: "from-blue-500 to-cyan-500"
     },
     {
       title: "Frameworks & Libraries",
       icon: <Wrench className="w-6 h-6" />,
-      skills: ["React.js", "Next.js", "Node.js", "Express.js", "Discord.js"],
+      skills: ["Node.js", "React.js", "Express.js", "Next.js", "TailwindCSS"],
       color: "from-green-500 to-emerald-500"
+    },
+    {
+      title: "AI & Analytics",
+      icon: <Database className="w-6 h-6" />,
+      skills: ["Gemini AI", "OpenAI", "Power BI", "Tableau", "MS Excel"],
+      color: "from-purple-500 to-violet-500"
+    },
+    {
+      title: "Platforms & Tools",
+      icon: <Cloud className="w-6 h-6" />,
+      skills: ["Figma", "Canva", "Shopify", "WordPress", "Clerk", "Metamask"],
+      color: "from-orange-500 to-red-500"
     },
     {
       title: "Databases & Cloud",
       icon: <Database className="w-6 h-6" />,
-      skills: ["MongoDB", "MySQL", "PostgreSQL", "Supabase", "AWS", "Google Cloud"],
-      color: "from-purple-500 to-violet-500"
-    },
-    {
-      title: "Tools & Platforms",
-      icon: <Cloud className="w-6 h-6" />,
-      skills: ["Git/GitHub", "Shopify", "WordPress", "Power BI", "Hardhat", "Clerk"],
-      color: "from-orange-500 to-red-500"
+      skills: ["MongoDB", "MySQL", "PostgreSQL", "Supabase", "AWS", "GCS", "Git/GitHub", "Hardhat"],
+      color: "from-cyan-500 to-blue-500"
     }
   ];
 
   const certifications = [
     "Electrowiz 2025 Runnerup (Hackathon)",
-    "Full Stack Python Developer",
-    "Web Development (Udemy)"
+    "Full Stack Python Developer (Kamal classes, Thane)",
+    "Oracle Cloud Infrastructure 2025 Certified Foundations Associate"
   ];
 
   return (

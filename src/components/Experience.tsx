@@ -32,13 +32,22 @@ const Experience = () => {
       skills: ["Node.js", "Discord.js", "API Integration", "Bot Development"]
     },
     {
+      title: "Web Developer Intern",
+      company: "Dejorix",
+      period: "Jan 2025 – Jun 2025",
+      location: "Mumbai, Maharashtra",
+      type: "Internship",
+      description: "Designing and developing responsive web applications using HTML, CSS, JavaScript, and React.js. Collaborating with design teams for user-friendly interfaces.",
+      skills: ["React.js", "HTML/CSS", "JavaScript", "UI/UX Design"]
+    },
+    {
       title: "Python Developer Intern",
       company: "Pythonic Labs",
-      period: "Jan 2024 – Feb 2024",
-      location: "Thane, Maharashtra",
+      period: "Apr 2024 – May 2024",
+      location: "Mumbai, Maharashtra",
       type: "Internship",
-      description: "Developed Python-based solutions focusing on data analytics, visualization, and API integration. Delivered actionable insights through meaningful reports.",
-      skills: ["Python", "Data Analytics", "Visualization", "API Development"]
+      description: "Built Python and SQL-based solutions for data analytics including Vendor Performance Analysis, Banking EDA, and Ola Data Analytics projects.",
+      skills: ["Python", "SQL", "Data Analytics", "Visualization"]
     }
   ];
 

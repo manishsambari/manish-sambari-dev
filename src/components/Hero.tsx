@@ -34,7 +34,7 @@ const Hero = () => {
 
         {/* Tech Stack Badges */}
         <div className="flex flex-wrap justify-center gap-3 animate-slide-up">
-          {["React", "Node.js", "Python", "Next.js", "MongoDB", "Blockchain"].map((tech) => (
+          {["React", "Node.js", "Python", "Next.js", "TailwindCSS", "AI/ML", "Blockchain"].map((tech) => (
             <Badge key={tech} variant="outline" className="px-4 py-2 text-sm hover:bg-primary/10 transition-colors">
               {tech}
             </Badge>
@@ -62,7 +62,7 @@ const Hero = () => {
             <div className="text-sm text-muted-foreground">Years Experience</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold text-primary">50+</div>
+            <div className="text-3xl font-bold text-primary">400+</div>
             <div className="text-sm text-muted-foreground">Bot Commands</div>
           </div>
         </div>

@@ -15,14 +15,14 @@ const Projects = () => {
     {
       title: "Crowdfunding Marketplace",
       description: "Decentralized crowdfunding platform enabling users to create campaigns and raise funds through Ethereum smart contracts.",
-      tech: ["React.js", "Hardhat", "Solidity", "Ethereum"],
+      tech: ["React.js", "Solidity", "Hardhat", "Metamask"],
       category: "Blockchain",
       gradient: "from-blue-500 to-purple-600"
     },
     {
       title: "Discord Bot Ecosystem",
-      description: "Multipurpose Discord bot with 50+ commands for moderation, economy, and entertainment, featuring MongoDB integration.",
-      tech: ["Node.js", "Discord.js", "MongoDB"],
+      description: "Multipurpose Discord bot with 400+ commands for moderation, economy, and entertainment, featuring MongoDB and AI integration.",
+      tech: ["Node.js", "Discord.js", "MongoDB", "WebHook", "OpenAI"],
       category: "Backend",
       gradient: "from-indigo-500 to-blue-600"
     },
