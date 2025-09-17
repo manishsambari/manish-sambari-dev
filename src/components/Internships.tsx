@@ -1,54 +1,32 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Briefcase, Calendar, MapPin } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Briefcase, Calendar, MapPin, ExternalLink } from "lucide-react";
 import { motion } from "framer-motion";
 
-const Experience = () => {
-  const experiences = [
+const Internships = () => {
+  const internships = [
     {
-      title: "Shopify Developer",
-      company: "Freelance",
-      period: "2025",
-      location: "Remote",
-      type: "Contract",
-      description: "Created and customized Shopify-based jewelry e-commerce website with secure payment gateways and optimized user experience.",
-      skills: ["Shopify", "E-commerce", "Payment Integration", "UI/UX"],
+      title: "Python Developer Intern",
+      company: "Pythonic Labs",
+      period: "Apr 2024 – May 2024",
+      location: "Mumbai, Maharashtra",
+      description: "Built Python and SQL-based solutions for data analytics including Vendor Performance Analysis, Banking EDA, and Ola Data Analytics projects.",
+      skills: ["Python", "SQL", "Data Analytics", "Visualization"],
+      certificateLink: "https://drive.google.com/file/d/1u5T6SH-V91cPwbBka782u1yr0P0AlIf_/view",
       gradient: "from-green-500 to-emerald-600"
     },
     {
-      title: "Digital Asset Transaction Coordinator",
-      company: "Freelance",
-      period: "June 2024 – Dec 2024",
-      location: "Remote",
-      type: "Contract",
-      description: "Facilitated peer-to-peer cryptocurrency transactions, ensuring secure exchanges with expertise in crypto valuation and real-time management.",
-      skills: ["Cryptocurrency", "P2P Trading", "Risk Management", "Market Analysis"],
-      gradient: "from-orange-500 to-red-600"
-    },
-    {
-      title: "Discord Bot Developer",
-      company: "Freelance",
-      period: "2023 – 2024",
-      location: "Remote",
-      type: "Freelance",
-      description: "Created custom Discord bots with API integration, automation, and moderation features to enhance server functionality for various communities.",
-      skills: ["Node.js", "Discord.js", "API Integration", "Bot Development"],
+      title: "Web Developer Intern",
+      company: "Dejorix",
+      period: "Jan 2025 – Jun 2025",
+      location: "Mumbai, Maharashtra",
+      description: "Designing and developing responsive web applications using HTML, CSS, JavaScript, and React.js. Collaborating with design teams for user-friendly interfaces.",
+      skills: ["React.js", "HTML/CSS", "JavaScript", "UI/UX Design"],
+      certificateLink: "https://drive.google.com/file/d/1Mbk2yi2rA5J4VS4_TC1QiNbv7ENKmaLQ/view",
       gradient: "from-blue-500 to-purple-600"
     }
   ];
-
-  const getTypeColor = (type: string) => {
-    switch (type) {
-      case "Internship":
-        return "bg-blue-500/10 text-blue-400 border-blue-500/20";
-      case "Freelance":
-        return "bg-green-500/10 text-green-400 border-green-500/20";
-      case "Contract":
-        return "bg-purple-500/10 text-purple-400 border-purple-500/20";
-      default:
-        return "bg-gray-500/10 text-gray-400 border-gray-500/20";
-    }
-  };
 
   return (
     <section className="py-20 px-4">
@@ -61,15 +39,15 @@ const Experience = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Professional <span className="bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">Experience</span>
+            My <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Internships</span>
           </h2>
           <p className="text-xl text-muted-foreground">
-            Building expertise through diverse projects and collaborations
+            Hands-on learning experiences that shaped my development journey
           </p>
         </motion.div>
 
         <div className="space-y-6">
-          {experiences.map((exp, index) => (
+          {internships.map((internship, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
@@ -89,27 +67,38 @@ const Experience = () => {
                         >
                           <Briefcase className="w-5 h-5 text-primary" />
                         </motion.div>
-                        {exp.title}
+                        {internship.title}
                       </CardTitle>
                       <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
-                        <span className="font-medium text-foreground">{exp.company}</span>
+                        <span className="font-medium text-foreground">{internship.company}</span>
                         <div className="flex items-center gap-1">
                           <Calendar className="w-4 h-4" />
-                          {exp.period}
+                          {internship.period}
                         </div>
                         <div className="flex items-center gap-1">
                           <MapPin className="w-4 h-4" />
-                          {exp.location}
+                          {internship.location}
                         </div>
                       </div>
                     </div>
-                    <Badge className={getTypeColor(exp.type)}>
-                      {exp.type}
-                    </Badge>
+                    <motion.div
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <Button 
+                        size="sm" 
+                        variant="outline"
+                        className="hover:bg-gradient-to-r hover:from-blue-500/10 hover:to-purple-500/10"
+                        onClick={() => window.open(internship.certificateLink, '_blank')}
+                      >
+                        <ExternalLink className="w-4 h-4 mr-2" />
+                        Certificate
+                      </Button>
+                    </motion.div>
                   </div>
                   
                   <motion.div 
-                    className={`h-2 rounded-full bg-gradient-to-r ${exp.gradient} opacity-60`}
+                    className={`h-2 rounded-full bg-gradient-to-r ${internship.gradient} opacity-60`}
                     initial={{ width: 0 }}
                     whileInView={{ width: "100%" }}
                     transition={{ delay: 0.5, duration: 1 }}
@@ -119,11 +108,11 @@ const Experience = () => {
                 
                 <CardContent className="space-y-4">
                   <p className="text-muted-foreground leading-relaxed">
-                    {exp.description}
+                    {internship.description}
                   </p>
                   
                   <div className="flex flex-wrap gap-2">
-                    {exp.skills.map((skill, skillIndex) => (
+                    {internship.skills.map((skill, skillIndex) => (
                       <motion.div
                         key={skill}
                         initial={{ opacity: 0, scale: 0 }}
@@ -148,4 +137,4 @@ const Experience = () => {
   );
 };
 
-export default Experience;
+export default Internships;
