@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import manishPhoto from "@/assets/manish-photo.jpg";
 import { motion } from "framer-motion";
 import { Download } from "lucide-react";
+import { TypeAnimation } from 'react-type-animation';
 
 const Hero = () => {
   return (
@@ -16,14 +17,33 @@ const Hero = () => {
           transition={{ type: "spring", stiffness: 260, damping: 20 }}
         >
           <motion.div 
-            className="w-40 h-40 mx-auto rounded-full overflow-hidden ring-4 ring-primary/30 glow-effect shadow-2xl"
+            className="w-40 h-40 mx-auto rounded-full overflow-hidden ring-4 ring-white/50 shadow-2xl relative"
             whileHover={{ scale: 1.1, rotate: 5 }}
             transition={{ type: "spring", stiffness: 300, damping: 10 }}
+            animate={{ 
+              boxShadow: [
+                "0 0 30px rgba(255,255,255,0.3)",
+                "0 0 60px rgba(255,255,255,0.5)", 
+                "0 0 30px rgba(255,255,255,0.3)"
+              ]
+            }}
+            style={{
+              animationDuration: "3s",
+              animationIterationCount: "infinite"
+            }}
           >
-            <img 
+            <motion.img 
               src={manishPhoto} 
               alt="Manish Sambari" 
               className="w-full h-full object-cover"
+              animate={{ 
+                filter: [
+                  "brightness(1) contrast(1)",
+                  "brightness(1.1) contrast(1.1)",
+                  "brightness(1) contrast(1)"
+                ]
+              }}
+              transition={{ duration: 2, repeat: Infinity }}
             />
           </motion.div>
           <motion.div
@@ -31,8 +51,8 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
           >
-            <Badge variant="secondary" className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 animate-float bg-gradient-to-r from-green-500 to-emerald-600 text-white border-none">
-              ✨ Available for Work
+            <Badge variant="secondary" className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 animate-float bg-gradient-to-r from-white to-gray-100 text-black border-2 border-white/20 shadow-lg">
+              💼 Open to Opportunities
             </Badge>
           </motion.div>
         </motion.div>
@@ -50,7 +70,24 @@ const Hero = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.5, duration: 0.6 }}
           >
-            Hi there, I'm <span className="gradient-text font-bold">Manish Sambari</span>
+            Hi there, I'm{" "}
+            <span className="gradient-text font-bold">
+              <TypeAnimation
+                sequence={[
+                  'Manish Sambari',
+                  2000,
+                  'a Full-Stack Developer',
+                  2000,
+                  'a Problem Solver',
+                  2000,
+                  'Manish Sambari',
+                  2000,
+                ]}
+                wrapper="span"
+                speed={50}
+                repeat={Infinity}
+              />
+            </span>
           </motion.div>
           <motion.h1 
             className="text-5xl md:text-7xl font-bold leading-tight bg-gradient-to-r from-blue-400 via-purple-500 to-emerald-500 bg-clip-text text-transparent"

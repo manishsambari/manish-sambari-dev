@@ -139,7 +139,7 @@ const Education = () => {
             <span className="bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent">Professional Certifications</span>
           </h3>
           
-          <div className="grid md:grid-cols-1 gap-4">
+          <div className="grid gap-4">
             {certifications.map((cert, index) => (
               <motion.div
                 key={index}

@@ -19,7 +19,7 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <span className="text-xl font-bold gradient-text">Manish Sambari</span>
+            <span className="text-xl font-bold gradient-text">Portfolio</span>
           </div>
 
           {/* Desktop Navigation */}
@@ -33,7 +33,18 @@ const Navigation = () => {
                 {item.label}
               </a>
             ))}
-            <Button variant="outline" size="sm">
+            <Button 
+              variant="outline" 
+              size="sm"
+              onClick={() => {
+                const link = document.createElement('a');
+                link.href = '/ManishSResume.pdf';
+                link.download = 'ManishSambari_Resume.pdf';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+              }}
+            >
               Resume
             </Button>
           </div>
@@ -65,7 +76,20 @@ const Navigation = () => {
                 </a>
               ))}
               <div className="pt-2">
-                <Button variant="outline" size="sm" className="w-full">
+                <Button 
+                  variant="outline" 
+                  size="sm" 
+                  className="w-full"
+                  onClick={() => {
+                    const link = document.createElement('a');
+                    link.href = '/ManishSResume.pdf';
+                    link.download = 'ManishSambari_Resume.pdf';
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                    setIsOpen(false);
+                  }}
+                >
                   Resume
                 </Button>
               </div>

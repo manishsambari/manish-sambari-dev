@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Mail, Phone, MapPin, Github, Linkedin, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Github, Linkedin, Send, MessageCircle, Instagram } from "lucide-react";
 
 const Contact = () => {
   const contactInfo = [
@@ -29,12 +29,22 @@ const Contact = () => {
     {
       icon: <Github className="w-5 h-5" />,
       label: "GitHub",
-      href: "#"
+      href: "https://github.com/moneyish69"
     },
     {
       icon: <Linkedin className="w-5 h-5" />,
       label: "LinkedIn", 
-      href: "#"
+      href: "https://linkedin.com/in/manish-sambari"
+    },
+    {
+      icon: <Instagram className="w-5 h-5" />,
+      label: "Instagram",
+      href: "https://instagram.com/manish.sambari"
+    },
+    {
+      icon: <MessageCircle className="w-5 h-5" />,
+      label: "X (Twitter)",
+      href: "https://x.com/sambarimanish"
     }
   ];
 
@@ -98,8 +108,8 @@ const Contact = () => {
 
               {/* Status Badge */}
               <div className="border-t pt-6">
-                <Badge variant="secondary" className="w-fit px-4 py-2">
-                  🟢 Available for new opportunities
+                <Badge variant="secondary" className="w-fit px-4 py-2 bg-gradient-to-r from-white/10 to-gray-100/10 text-white border border-white/20">
+                  💼 Open to Opportunities
                 </Badge>
               </div>
             </CardContent>
@@ -114,23 +124,37 @@ const Contact = () => {
               </p>
             </CardHeader>
             <CardContent className="space-y-4">
-              <Button className="w-full justify-start gap-3 h-14 text-left" size="lg">
-                <Send className="w-5 h-5" />
+              <Button 
+                className="w-full justify-start gap-3 h-14 text-left bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700" 
+                size="lg"
+                onClick={() => window.open('https://wa.me/919764201151', '_blank')}
+              >
+                <MessageCircle className="w-5 h-5" />
                 <div>
                   <div className="font-semibold">Send a Message</div>
-                  <div className="text-sm opacity-80">Discuss your project ideas</div>
+                  <div className="text-sm opacity-80">Chat on WhatsApp</div>
                 </div>
               </Button>
               
-              <Button variant="outline" className="w-full justify-start gap-3 h-14 text-left" size="lg">
+              <Button 
+                variant="outline" 
+                className="w-full justify-start gap-3 h-14 text-left border-2 hover:border-primary/50 hover:bg-primary/5" 
+                size="lg"
+                onClick={() => window.open('tel:+919764201151', '_self')}
+              >
                 <Phone className="w-5 h-5" />
                 <div>
                   <div className="font-semibold">Schedule a Call</div>
-                  <div className="text-sm opacity-80">Let's talk about opportunities</div>
+                  <div className="text-sm opacity-80">Direct call to discuss opportunities</div>
                 </div>
               </Button>
               
-              <Button variant="outline" className="w-full justify-start gap-3 h-14 text-left" size="lg">
+              <Button 
+                variant="outline" 
+                className="w-full justify-start gap-3 h-14 text-left border-2 hover:border-primary/50 hover:bg-primary/5" 
+                size="lg"
+                onClick={() => window.open('https://github.com/moneyish69', '_blank')}
+              >
                 <Github className="w-5 h-5" />
                 <div>
                   <div className="font-semibold">View My Code</div>
@@ -142,7 +166,7 @@ const Contact = () => {
               <div className="pt-6 border-t">
                 <h4 className="font-semibold mb-3">Open to opportunities in:</h4>
                 <div className="flex flex-wrap gap-2">
-                  {["Full-Stack Development", "AI/ML Projects", "Blockchain", "E-commerce", "Discord Bots"].map((spec) => (
+                  {["Full-Stack Development", "Web Applications", "Discord Bots", "E-commerce", "Problem Solving"].map((spec) => (
                     <Badge key={spec} variant="outline" className="text-xs">
                       {spec}
                     </Badge>
