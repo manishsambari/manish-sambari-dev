@@ -6,12 +6,14 @@ import Experience from "@/components/Experience";
 import Education from "@/components/Education";
 import Skills from "@/components/Skills";
 import Contact from "@/components/Contact";
+import FloatingElements from "@/components/FloatingElements";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative">
+      <FloatingElements />
       <Navigation />
-      <main className="pt-16">
+      <main className="pt-16 relative z-10">
         <Hero />
         <div id="projects">
           <Projects />
