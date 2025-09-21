@@ -48,9 +48,9 @@ const Skills = () => {
       <div className="max-w-6xl mx-auto">
         <motion.div 
           className="text-center mb-16"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          initial={{ opacity: 0, scale: 0, rotate: -180 }}
+          whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+          transition={{ duration: 1.2, type: "spring", stiffness: 80 }}
           viewport={{ once: true }}
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
@@ -66,11 +66,11 @@ const Skills = () => {
           {skillCategories.map((category, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.2, duration: 0.8 }}
+              initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100, rotateZ: index % 2 === 0 ? -45 : 45 }}
+              whileInView={{ opacity: 1, x: 0, rotateZ: 0 }}
+              transition={{ delay: index * 0.15, duration: 0.9, type: "spring" }}
               viewport={{ once: true }}
-              whileHover={{ scale: 1.05, y: -10 }}
+              whileHover={{ scale: 1.08, rotateZ: 2, y: -15 }}
             >
               <Card className="glass-card group hover:shadow-2xl transition-all duration-300 h-full">
                 <CardHeader>

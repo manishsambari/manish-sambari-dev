@@ -55,9 +55,9 @@ const Experience = () => {
       <div className="max-w-4xl mx-auto">
         <motion.div 
           className="text-center mb-16"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          initial={{ opacity: 0, rotateX: -90 }}
+          whileInView={{ opacity: 1, rotateX: 0 }}
+          transition={{ duration: 1, type: "spring", stiffness: 100 }}
           viewport={{ once: true }}
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
@@ -72,11 +72,11 @@ const Experience = () => {
           {experiences.map((exp, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ delay: index * 0.2, duration: 0.8 }}
+              initial={{ opacity: 0, rotateY: index % 2 === 0 ? -180 : 180, scale: 0.5 }}
+              whileInView={{ opacity: 1, rotateY: 0, scale: 1 }}
+              transition={{ delay: index * 0.3, duration: 1, type: "spring" }}
               viewport={{ once: true }}
-              whileHover={{ scale: 1.02, y: -5 }}
+              whileHover={{ scale: 1.05, rotateX: 5, y: -10 }}
             >
               <Card className="glass-card group hover:shadow-2xl transition-all duration-300">
                 <CardHeader>

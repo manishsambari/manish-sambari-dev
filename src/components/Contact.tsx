@@ -2,6 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Mail, Phone, MapPin, Github, Linkedin, Send, MessageCircle, Instagram } from "lucide-react";
+import { motion } from "framer-motion";
 
 const Contact = () => {
   const contactInfo = [
@@ -51,18 +52,43 @@ const Contact = () => {
   return (
     <section className="py-20 px-4">
       <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 animate-fade-in">
+        <motion.div 
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 100, rotateX: 90 }}
+          whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+          transition={{ duration: 1.5, type: "spring", stiffness: 60 }}
+          viewport={{ once: true }}
+        >
+          <motion.h2 
+            className="text-4xl md:text-5xl font-bold mb-4"
+            initial={{ letterSpacing: "0.5em", opacity: 0 }}
+            whileInView={{ letterSpacing: "normal", opacity: 1 }}
+            transition={{ duration: 1, delay: 0.3 }}
+            viewport={{ once: true }}
+          >
             Let's <span className="gradient-text">Connect</span>
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto animate-slide-up">
+          </motion.h2>
+          <motion.p 
+            className="text-xl text-muted-foreground max-w-2xl mx-auto"
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            viewport={{ once: true }}
+          >
             Let's discuss your next project and bring your ideas to life
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
         <div className="grid md:grid-cols-2 gap-8">
           {/* Contact Information */}
-          <Card className="glass-card hover:scale-105 transition-all duration-300 animate-fade-in">
+          <motion.div
+            initial={{ opacity: 0, x: -150, rotateY: -90 }}
+            whileInView={{ opacity: 1, x: 0, rotateY: 0 }}
+            transition={{ duration: 1, type: "spring", stiffness: 70 }}
+            viewport={{ once: true }}
+            whileHover={{ scale: 1.03, rotateY: 5 }}
+          >
+          <Card className="glass-card transition-all duration-300">
             <CardHeader>
               <CardTitle className="text-2xl">Get In Touch</CardTitle>
               <p className="text-muted-foreground">
@@ -114,9 +140,17 @@ const Contact = () => {
               </div>
             </CardContent>
           </Card>
+          </motion.div>
 
           {/* Quick Actions */}
-          <Card className="glass-card hover:scale-105 transition-all duration-300 animate-fade-in" style={{ animationDelay: '0.1s' }}>
+          <motion.div
+            initial={{ opacity: 0, x: 150, rotateY: 90 }}
+            whileInView={{ opacity: 1, x: 0, rotateY: 0 }}
+            transition={{ duration: 1, delay: 0.2, type: "spring", stiffness: 70 }}
+            viewport={{ once: true }}
+            whileHover={{ scale: 1.03, rotateY: -5 }}
+          >
+          <Card className="glass-card transition-all duration-300">
             <CardHeader>
               <CardTitle className="text-2xl">Quick Actions</CardTitle>
               <p className="text-muted-foreground">
@@ -175,6 +209,7 @@ const Contact = () => {
               </div>
             </CardContent>
           </Card>
+          </motion.div>
         </div>
 
       </div>
