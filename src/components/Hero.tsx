@@ -4,8 +4,27 @@ import manishPhoto from "@/assets/manish-photo.jpg";
 import { motion } from "framer-motion";
 import { Download } from "lucide-react";
 import { TypeAnimation } from 'react-type-animation';
+import { useState, useEffect } from 'react';
 
 const Hero = () => {
+  const [currentColor, setCurrentColor] = useState(0);
+  const colors = [
+    'text-blue-400',
+    'text-green-400', 
+    'text-purple-400',
+    'text-pink-400',
+    'text-yellow-400',
+    'text-red-400',
+    'text-orange-400'
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentColor((prev) => (prev + 1) % colors.length);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, [colors.length]);
+
   return (
     <section className="min-h-screen flex items-center justify-center px-4 py-20">
       <div className="max-w-4xl mx-auto text-center space-y-8">
@@ -65,28 +84,13 @@ const Hero = () => {
           transition={{ delay: 0.3, duration: 0.8 }}
         >
           <motion.div 
-            className="text-2xl md:text-3xl font-medium text-muted-foreground mb-4"
+            className="text-2xl md:text-3xl font-medium mb-4"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.5, duration: 0.6 }}
           >
-            Hi there, I'm{" "}
-            <span className="gradient-text font-bold">
-              <TypeAnimation
-                sequence={[
-                  'Manish Sambari',
-                  2000,
-                  'a Full-Stack Developer',
-                  2000,
-                  'a Problem Solver',
-                  2000,
-                  'Manish Sambari',
-                  2000,
-                ]}
-                wrapper="span"
-                speed={50}
-                repeat={Infinity}
-              />
+            <span className={`transition-colors duration-500 ${colors[currentColor]} font-bold`}>
+              Hi there, I'm Manish Sambari, I'm a problem solver
             </span>
           </motion.div>
           <motion.h1 
@@ -95,8 +99,22 @@ const Hero = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.7, type: "spring", stiffness: 100 }}
           >
-            Crafting Digital Solutions with{" "}
-            <span className="mint-gradient animate-gentle-bounce inline-block">Innovation</span>
+            <TypeAnimation
+              sequence={[
+                'Crafting Digital Solutions with Innovation',
+                2000,
+                'Building Modern Web Applications',
+                2000,
+                'Creating Seamless User Experiences',
+                2000,
+                'Developing Cutting-Edge Technologies',
+                2000,
+              ]}
+              wrapper="span"
+              speed={50}
+              repeat={Infinity}
+              style={{ display: 'inline-block' }}
+            />
           </motion.h1>
           <motion.p 
             className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed"
