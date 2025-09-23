@@ -94,9 +94,9 @@ const Hero = () => {
               sequence={[
                 'Manish Sambari',
                 2000,
-                'a full-stack developer',
+                'a Full-stack Developer',
                 2000,
-                'a problem solver',
+                'a Problem Solver',
                 2000,
                 'an AI enthusiast',
                 2000,
