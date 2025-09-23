@@ -89,27 +89,24 @@ const Hero = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.5, duration: 0.6 }}
           >
+            <span className="font-bold text-white">Hi there, I'm </span>
             <TypeAnimation
               sequence={[
-                'Hi there, I\'m Manish Sambari, I\'m a problem solver',
+                'Manish Sambari',
                 2000,
-                'Hi there, I\'m Manish Sambari, I\'m a',
-                500,
-                'Hi there, I\'m Manish Sambari, I\'m a full-stack developer',
+                'a full-stack developer',
                 2000,
-                'Hi there, I\'m Manish Sambari, I\'m a',
-                500,
-                'Hi there, I\'m Manish Sambari, I\'m an AI enthusiast',
+                'a problem solver',
                 2000,
-                'Hi there, I\'m Manish Sambari, I\'m a',
-                500,
+                'an AI enthusiast',
+                2000,
               ]}
               wrapper="span"
               speed={50}
               repeat={Infinity}
               deletionSpeed={70}
               style={{ display: 'inline-block' }}
-              className={`transition-colors duration-500 ${colors[currentColor]} font-bold`}
+              className={`transition-colors duration-500 ${colors[currentColor]} font-bold bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent`}
             />
           </motion.div>
           <motion.h1 
