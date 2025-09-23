@@ -92,11 +92,11 @@ const Hero = () => {
             <span className="font-bold text-white">Hi there, I'm </span>
             <TypeAnimation
               sequence={[
-                'Manish Sambari',
+                'Manish Sambari.',
                 2000,
-                'a Full-stack Developer',
+                'a Full-stack Developer.',
                 2000,
-                'a Problem Solver',
+                'a Problem Solver.',
                 2000,
                 'an AI enthusiast',
                 2000,
