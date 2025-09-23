@@ -91,18 +91,23 @@ const Hero = () => {
           >
             <TypeAnimation
               sequence={[
-                'Hi there, I\'m Manish Sambari',
-                1000,
                 'Hi there, I\'m Manish Sambari, I\'m a problem solver',
-                1000,
+                2000,
+                'Hi there, I\'m Manish Sambari, I\'m a',
+                500,
                 'Hi there, I\'m Manish Sambari, I\'m a full-stack developer',
-                1000,
+                2000,
+                'Hi there, I\'m Manish Sambari, I\'m a',
+                500,
                 'Hi there, I\'m Manish Sambari, I\'m an AI enthusiast',
-                1000,
+                2000,
+                'Hi there, I\'m Manish Sambari, I\'m a',
+                500,
               ]}
               wrapper="span"
               speed={50}
               repeat={Infinity}
+              deletionSpeed={70}
               style={{ display: 'inline-block' }}
               className={`transition-colors duration-500 ${colors[currentColor]} font-bold`}
             />
