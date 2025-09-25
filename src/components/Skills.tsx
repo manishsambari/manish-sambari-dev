@@ -37,11 +37,6 @@ const Skills = () => {
     }
   ];
 
-  const certifications = [
-    "Electrowiz 2025 Runnerup (Hackathon)",
-    "Full Stack Python Developer (Kamal classes, Thane)",
-    "Oracle Cloud Infrastructure 2025 Certified Foundations Associate"
-  ];
 
   return (
     <section className="py-20 px-4">
@@ -149,44 +144,6 @@ const Skills = () => {
           </Card>
         </motion.div>
 
-        {/* Certifications */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          whileHover={{ scale: 1.02 }}
-        >
-          <Card className="glass-card hover:shadow-2xl transition-all duration-300">
-            <CardHeader>
-              <CardTitle className="text-2xl text-center">
-                <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">Certifications & Achievements</span>
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-3">
-                {certifications.map((cert, index) => (
-                  <motion.div 
-                    key={index} 
-                    className="flex items-center gap-3 p-3 rounded-lg bg-muted/50 hover:bg-primary/10 transition-colors"
-                    initial={{ opacity: 0, x: -50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.2, duration: 0.6 }}
-                    viewport={{ once: true }}
-                    whileHover={{ scale: 1.02, x: 10 }}
-                  >
-                    <motion.div 
-                      className="w-2 h-2 rounded-full bg-primary"
-                      animate={{ scale: [1, 1.5, 1] }}
-                      transition={{ duration: 2, repeat: Infinity, delay: index * 0.5 }}
-                    />
-                    <span className="font-medium">{cert}</span>
-                  </motion.div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
-        </motion.div>
       </div>
     </section>
   );
