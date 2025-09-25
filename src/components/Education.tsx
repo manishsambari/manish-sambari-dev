@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { GraduationCap, Award, ExternalLink } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -33,20 +34,22 @@ const Education = () => {
     {
       name: "Full Stack Web Development",
       issuer: "TechnoHacks EduTech",
-      link: "https://drive.google.com/file/d/131Q1F9nOtBv9HfpUTwkjO3YU726Kre-U/view",
-      gradient: "from-blue-500 to-purple-600"
+      link: "https://drive.google.com/file/d/131Q1F9nOtBv9HfpUTwkjO3YU726Kre-U/view"
+    },
+    {
+      name: "Full Stack Python Developer",
+      issuer: "Pythonic Labs",
+      link: "#"
     },
     {
       name: "Oracle Cloud Infrastructure 2025 Foundations",
       issuer: "Oracle",
-      link: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=8C5314EEDCE53749057B5132C2B4F75F967C7B8BE3817A1EBC5E7CFFE50E33AB",
-      gradient: "from-red-500 to-orange-600"
+      link: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=8C5314EEDCE53749057B5132C2B4F75F967C7B8BE3817A1EBC5E7CFFE50E33AB"
     },
     {
       name: "ElectoWiz Certification",
       issuer: "ElectoWiz",
-      link: "https://drive.google.com/file/d/1_oWbVjWj5f1ipb_5A_mLX46J6Zo4Djuv/view",
-      gradient: "from-green-500 to-emerald-600"
+      link: "https://drive.google.com/file/d/1_oWbVjWj5f1ipb_5A_mLX46J6Zo4Djuv/view"
     }
   ];
 
@@ -139,59 +142,56 @@ const Education = () => {
             <span className="bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent">Professional Certifications</span>
           </h3>
           
-          <div className="grid gap-4">
-            {certifications.map((cert, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ delay: index * 0.2, duration: 0.8 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.02, y: -3 }}
-              >
-                <Card className="glass-card hover:shadow-2xl transition-all duration-300">
-                  <CardHeader>
-                    <div className="flex items-center justify-between">
-                      <div className="space-y-2">
-                        <CardTitle className="text-lg flex items-center gap-2">
-                          <motion.div
-                            animate={{ scale: [1, 1.2, 1] }}
-                            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                          >
-                            <Award className="w-5 h-5 text-primary" />
-                          </motion.div>
-                          {cert.name}
-                        </CardTitle>
-                        <p className="text-muted-foreground font-medium">{cert.issuer}</p>
+          <Card className="glass-card">
+            <CardContent className="p-0">
+              <Table>
+                <TableHeader>
+                  <TableRow className="border-border/50">
+                    <TableHead className="font-semibold text-foreground">
+                      <div className="flex items-center gap-2">
+                        <Award className="w-4 h-4 text-primary" />
+                        Certification
                       </div>
-                      <motion.div
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.95 }}
-                      >
-                        <Button 
-                          size="sm" 
-                          variant="outline"
-                          className="hover:bg-gradient-to-r hover:from-green-500/10 hover:to-emerald-500/10"
-                          onClick={() => window.open(cert.link, '_blank')}
-                        >
-                          <ExternalLink className="w-4 h-4 mr-2" />
-                          View
-                        </Button>
-                      </motion.div>
-                    </div>
-                    
-                    <motion.div 
-                      className={`h-2 rounded-full bg-gradient-to-r ${cert.gradient} opacity-60`}
-                      initial={{ width: 0 }}
-                      whileInView={{ width: "100%" }}
-                      transition={{ delay: 0.5, duration: 1 }}
+                    </TableHead>
+                    <TableHead className="font-semibold text-foreground">Issuing Organization</TableHead>
+                    <TableHead className="text-center font-semibold text-foreground">Action</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {certifications.map((cert, index) => (
+                    <motion.tr
+                      key={index}
+                      className="border-border/30 hover:bg-muted/50 transition-colors"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ delay: index * 0.1, duration: 0.5 }}
                       viewport={{ once: true }}
-                    />
-                  </CardHeader>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
+                    >
+                      <TableCell className="font-medium">{cert.name}</TableCell>
+                      <TableCell className="text-muted-foreground">{cert.issuer}</TableCell>
+                      <TableCell className="text-center">
+                        <motion.div
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                        >
+                          <Button 
+                            size="sm" 
+                            variant="outline"
+                            className="hover:bg-primary/10"
+                            onClick={() => cert.link !== "#" && window.open(cert.link, '_blank')}
+                            disabled={cert.link === "#"}
+                          >
+                            <ExternalLink className="w-3 h-3 mr-1" />
+                            View
+                          </Button>
+                        </motion.div>
+                      </TableCell>
+                    </motion.tr>
+                  ))}
+                </TableBody>
+              </Table>
+            </CardContent>
+          </Card>
         </motion.div>
       </div>
     </section>
