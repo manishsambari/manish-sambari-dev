@@ -44,7 +44,7 @@ const Contact = () => {
     },
     {
       icon: <MessageCircle className="w-5 h-5" />,
-      label: "X (Twitter)",
+      label: "X",
       href: "https://x.com/sambarimanish"
     }
   ];
@@ -120,7 +120,7 @@ const Contact = () => {
               {/* Social Links */}
               <div className="border-t pt-6">
                 <h4 className="font-semibold mb-4">Connect With Me</h4>
-                <div className="flex gap-3">
+                <div className="flex flex-wrap gap-2">
                   {socialLinks.map((social, index) => (
                     <Button key={index} variant="outline" size="sm" asChild>
                       <a href={social.href} className="flex items-center gap-2">
@@ -195,6 +195,7 @@ const Contact = () => {
                   <div className="text-sm opacity-80">Explore my GitHub repositories</div>
                 </div>
               </Button>
+
 
               {/* Specializations */}
               <div className="pt-6 border-t">
