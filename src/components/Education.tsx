@@ -32,14 +32,9 @@ const Education = () => {
 
   const certifications = [
     {
-      name: "Full Stack Web Development",
-      issuer: "TechnoHacks EduTech",
-      link: "https://drive.google.com/file/d/131Q1F9nOtBv9HfpUTwkjO3YU726Kre-U/view"
-    },
-    {
       name: "Full Stack Python Developer",
       issuer: "Pythonic Labs",
-      link: "#"
+      link: "https://drive.google.com/file/d/131Q1F9nOtBv9HfpUTwkjO3YU726Kre-U/view"
     },
     {
       name: "Oracle Cloud Infrastructure 2025 Foundations",
