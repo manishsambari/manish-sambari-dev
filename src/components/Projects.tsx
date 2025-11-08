@@ -30,7 +30,7 @@ const Projects = () => {
       tech: ["Node.js", "Discord.js", "MongoDB", "WebHook", "Express.js"],
       category: "Backend",
       gradient: "from-indigo-500 to-blue-600",
-      github: "https://github.com/moneyish69/DiscordBot"
+      github: "https://github.com/moneyish69/Discord-Bot-Own"
     },
     {
       title: "Crowdfunding Marketplace",
