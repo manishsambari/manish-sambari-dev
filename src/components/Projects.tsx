@@ -12,7 +12,7 @@ const Projects = () => {
       tech: ["Next.js", "Tailwind", "Supabase", "Gemini AI", "Shadcn UI"],
       category: "Full-Stack",
       gradient: "from-emerald-500 to-teal-600",
-      github: "https://github.com/moneyish69/FinSight",
+      github: "https://github.com/manishsambari/FinSight",
       live: "https://finsight-eight.vercel.app"
     },
     {
@@ -21,7 +21,7 @@ const Projects = () => {
       tech: ["React.js", "Node.js", "MongoDB", "Socket.io", "Express.js"],
       category: "Full-Stack",
       gradient: "from-orange-500 to-red-600",
-      github: "https://github.com/moneyish69/BrowseAndBuy",
+      github: "https://github.com/manishsambari/BrowseAndBuy",
       live: "https://browsenbuy.vercel.app/"
     },
     {
@@ -30,7 +30,7 @@ const Projects = () => {
       tech: ["Node.js", "Discord.js", "MongoDB", "WebHook", "Express.js"],
       category: "Backend",
       gradient: "from-indigo-500 to-blue-600",
-      github: "https://github.com/moneyish69/Discord-Bot-Own"
+      github: "https://github.com/manishsambari/Discord-Bot-Own"
     },
     {
       title: "Crowdfunding Marketplace",
@@ -38,7 +38,7 @@ const Projects = () => {
       tech: ["React.js", "Solidity", "Hardhat", "Metamask"],
       category: "Web3",
       gradient: "from-blue-500 to-purple-600",
-      github: "https://github.com/moneyish69/Crowdfunding"
+      github: "https://github.com/manishsambari/Crowdfunding"
     }
   ];
 

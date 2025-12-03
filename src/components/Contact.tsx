@@ -30,7 +30,7 @@ const Contact = () => {
     {
       icon: <Github className="w-5 h-5" />,
       label: "GitHub",
-      href: "https://github.com/moneyish69"
+      href: "https://github.com/manishsambari"
     },
     {
       icon: <Linkedin className="w-5 h-5" />,
@@ -187,7 +187,7 @@ const Contact = () => {
                 variant="outline" 
                 className="w-full justify-start gap-3 h-14 text-left border-2 hover:border-primary/50 hover:bg-primary/5" 
                 size="lg"
-                onClick={() => window.open('https://github.com/moneyish69', '_blank')}
+                onClick={() => window.open('https://github.com/manishsambari', '_blank')}
               >
                 <Github className="w-5 h-5" />
                 <div>
