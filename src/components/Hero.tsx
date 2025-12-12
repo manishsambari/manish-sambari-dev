@@ -211,7 +211,7 @@ const Hero = () => {
               className="px-8 py-6 text-lg bg-white/10 hover:bg-white/20 text-white border border-white/20 hover:border-white/40 transition-all duration-300"
               onClick={() => {
                 const link = document.createElement('a');
-                link.href = '/ManishSResume.pdf';
+                link.href = '/ManishSResume.pdf?v=' + Date.now();
                 link.download = 'ManishSambari_Resume.pdf';
                 document.body.appendChild(link);
                 link.click();

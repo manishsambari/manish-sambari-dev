@@ -38,7 +38,7 @@ const Navigation = () => {
               size="sm"
               onClick={() => {
                 const link = document.createElement('a');
-                link.href = '/ManishSResume.pdf';
+                link.href = '/ManishSResume.pdf?v=' + Date.now();
                 link.download = 'ManishSambari_Resume.pdf';
                 document.body.appendChild(link);
                 link.click();
@@ -82,7 +82,7 @@ const Navigation = () => {
                   className="w-full"
                   onClick={() => {
                     const link = document.createElement('a');
-                    link.href = '/ManishSResume.pdf';
+                    link.href = '/ManishSResume.pdf?v=' + Date.now();
                     link.download = 'ManishSambari_Resume.pdf';
                     document.body.appendChild(link);
                     link.click();
