@@ -7,24 +7,34 @@ import { motion } from "framer-motion";
 const Internships = () => {
   const internships = [
     {
+      title: "Full Stack Developer Intern",
+      company: "NullClass",
+      period: "June 2025 – November 2025",
+      location: "Remote",
+      description: "Built the MERN-stack backend for a course-selling platform, including APIs, authentication, and database schema design. Developed secure login/signup flows using JWT and handled role-based access control.",
+      skills: ["MERN Stack", "JWT", "MongoDB", "APIs", "Authentication"],
+      certificateLink: "#",
+      gradient: "from-purple-500 to-indigo-600"
+    },
+    {
+      title: "Frontend Developer Intern",
+      company: "Dejorix",
+      period: "January 2025 – March 2025",
+      location: "Mumbai, Maharashtra",
+      description: "Worked at a startup, building portfolio websites and client-facing frontend projects. Developed clean, responsive React.js interfaces with reusable components and smooth user interactions.",
+      skills: ["React.js", "Frontend", "UI/UX", "Responsive Design"],
+      certificateLink: "https://drive.google.com/file/d/1Mbk2yi2rA5J4VS4_TC1QiNbv7ENKmaLQ/view",
+      gradient: "from-blue-500 to-purple-600"
+    },
+    {
       title: "Python Developer Intern",
       company: "Pythonic Labs",
-      period: "Apr 2024 – May 2024",
+      period: "April 2024 – May 2024",
       location: "Mumbai, Maharashtra",
-      description: "Built Python and SQL-based solutions for data analytics including Vendor Performance Analysis, Banking EDA, and Ola Data Analytics projects.",
+      description: "Developed Python- and SQL-based solutions for analytics, data visualization, and API integration. Built projects such as Vendor Performance Analysis, Banking EDA, and Ola Data Analytics.",
       skills: ["Python", "SQL", "Data Analytics", "Visualization"],
       certificateLink: "https://drive.google.com/file/d/1u5T6SH-V91cPwbBka782u1yr0P0AlIf_/view",
       gradient: "from-green-500 to-emerald-600"
-    },
-    {
-      title: "Web Developer Intern",
-      company: "Dejorix",
-      period: "Jan 2025 – Jun 2025",
-      location: "Mumbai, Maharashtra",
-      description: "Designing and developing responsive web applications using HTML, CSS, JavaScript, and React.js. Collaborating with design teams for user-friendly interfaces.",
-      skills: ["React.js", "HTML/CSS", "JavaScript", "UI/UX Design"],
-      certificateLink: "https://drive.google.com/file/d/1Mbk2yi2rA5J4VS4_TC1QiNbv7ENKmaLQ/view",
-      gradient: "from-blue-500 to-purple-600"
     }
   ];
 
@@ -39,7 +49,7 @@ const Internships = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            My <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Internships</span>
+            Work <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Experience</span>
           </h2>
           <p className="text-xl text-muted-foreground">
             Hands-on learning experiences that shaped my development journey

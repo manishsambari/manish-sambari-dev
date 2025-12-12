@@ -8,25 +8,19 @@ const Skills = () => {
     {
       title: "Programming Languages",
       icon: <Code className="w-6 h-6" />,
-      skills: ["Python", "JavaScript", "SQL"],
+      skills: ["C", "C++", "Java", "Python", "JavaScript", "TypeScript", "SQL"],
       color: "from-blue-500 to-cyan-500"
     },
     {
       title: "Frameworks & Libraries",
       icon: <Wrench className="w-6 h-6" />,
-      skills: ["Node.js", "React.js", "Next.js", "TailwindCSS"],
+      skills: ["Node.js", "React.js", "Express.js", "Next.js", "TailwindCSS", "Gemini AI", "OpenAI"],
       color: "from-green-500 to-emerald-500"
-    },
-    {
-      title: "AI & Analytics",
-      icon: <Database className="w-6 h-6" />,
-      skills: ["Gemini AI", "OpenAI", "Power BI", "Tableau", "MS Excel"],
-      color: "from-purple-500 to-violet-500"
     },
     {
       title: "Platforms & Tools",
       icon: <Cloud className="w-6 h-6" />,
-      skills: ["Figma", "Canva", "Shopify", "WordPress", "Clerk", "Metamask"],
+      skills: ["Canva", "Figma", "Shopify", "WordPress", "Power BI", "Tableau", "Clerk", "Metamask"],
       color: "from-orange-500 to-red-500"
     },
     {
@@ -34,6 +28,12 @@ const Skills = () => {
       icon: <Database className="w-6 h-6" />,
       skills: ["MongoDB", "MySQL", "PostgreSQL", "Supabase", "AWS", "GCS", "Git/GitHub", "Hardhat"],
       color: "from-cyan-500 to-blue-500"
+    },
+    {
+      title: "CS Fundamentals",
+      icon: <Database className="w-6 h-6" />,
+      skills: ["OOPs", "Data Structures", "Algorithms", "Operating Systems", "Networking", "DBMS"],
+      color: "from-purple-500 to-violet-500"
     }
   ];
 

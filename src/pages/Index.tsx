@@ -5,6 +5,7 @@ import Internships from "@/components/Internships";
 import Experience from "@/components/Experience";
 import Education from "@/components/Education";
 import Skills from "@/components/Skills";
+import Achievements from "@/components/Achievements";
 import Contact from "@/components/Contact";
 import FloatingElements from "@/components/FloatingElements";
 
@@ -29,6 +30,9 @@ const Index = () => {
         </div>
         <div id="skills">
           <Skills />
+        </div>
+        <div id="achievements">
+          <Achievements />
         </div>
         <div id="contact">
           <Contact />

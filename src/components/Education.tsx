@@ -32,19 +32,19 @@ const Education = () => {
 
   const certifications = [
     {
+      name: "Web Development Cohort 2.0",
+      issuer: "Harkirat Singh",
+      link: "#"
+    },
+    {
       name: "Full Stack Python Developer",
-      issuer: "Pythonic Labs",
+      issuer: "Kamal Classes",
       link: "https://drive.google.com/file/d/131Q1F9nOtBv9HfpUTwkjO3YU726Kre-U/view"
     },
     {
-      name: "Oracle Cloud Infrastructure 2025 Foundations",
+      name: "Oracle Cloud Infrastructure 2025 Foundations Associate",
       issuer: "Oracle",
       link: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=8C5314EEDCE53749057B5132C2B4F75F967C7B8BE3817A1EBC5E7CFFE50E33AB"
-    },
-    {
-      name: "ElectoWiz Certification",
-      issuer: "ElectoWiz",
-      link: "https://drive.google.com/file/d/1_oWbVjWj5f1ipb_5A_mLX46J6Zo4Djuv/view"
     }
   ];
 

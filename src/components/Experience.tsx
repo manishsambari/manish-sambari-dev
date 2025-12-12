@@ -11,28 +11,28 @@ const Experience = () => {
       period: "2025",
       location: "Remote",
       type: "Contract",
-      description: "Created and customized Shopify-based jewelry e-commerce website with secure payment gateways and optimized user experience.",
+      description: "Built and customized a Shopify jewelry e-commerce site for client.",
       skills: ["Shopify", "E-commerce", "Payment Integration", "UI/UX"],
       gradient: "from-green-500 to-emerald-600"
     },
     {
       title: "Digital Asset Transaction Coordinator",
       company: "Freelance",
-      period: "June 2024 – Dec 2024",
+      period: "2024 – 2025",
       location: "Remote",
       type: "Contract",
-      description: "Facilitated peer-to-peer cryptocurrency transactions, ensuring secure exchanges with expertise in crypto valuation and real-time management.",
+      description: "Facilitated secure peer-to-peer cryptocurrency transactions and handled exchange rate checks.",
       skills: ["Cryptocurrency", "P2P Trading", "Risk Management", "Market Analysis"],
       gradient: "from-orange-500 to-red-600"
     },
     {
-      title: "Discord Bot Developer",
+      title: "Discord Moderator & Bot Developer",
       company: "Freelance",
       period: "2023 – 2024",
       location: "Remote",
       type: "Freelance",
-      description: "Created custom Discord bots with API integration, automation, and moderation features to enhance server functionality for various communities.",
-      skills: ["Node.js", "Discord.js", "API Integration", "Bot Development"],
+      description: "Managed large Discord communities and handled rule enforcement and conflict resolution. Built custom automation and moderation bots with API integration.",
+      skills: ["Node.js", "Discord.js", "API Integration", "Community Management"],
       gradient: "from-blue-500 to-purple-600"
     }
   ];
@@ -61,7 +61,7 @@ const Experience = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Professional <span className="bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">Experience</span>
+            Additional <span className="bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">Experience</span>
           </h2>
           <p className="text-xl text-muted-foreground">
             Building expertise through diverse projects and collaborations
