@@ -14,8 +14,8 @@ const Navigation = () => {
 
   const navItems = [
     { label: "Projects", href: "#projects" },
-    { label: "Work", href: "#internships" },
-    { label: "Experience", href: "#experience" },
+    { label: "Experience", href: "#internships" },
+    { label: "Freelance", href: "#freelance" },
     { label: "Education", href: "#education" },
     { label: "Skills", href: "#skills" },
     { label: "Awards", href: "#achievements" },
