@@ -1,4 +1,5 @@
-import { ExternalLink, Github, FolderGit2 } from "lucide-react";
+import { ExternalLink, Github, ArrowUpRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 const Projects = () => {
   const projects = [
@@ -6,39 +7,47 @@ const Projects = () => {
       title: "CourseShip",
       tagline: "Full-Stack E-Learning Platform",
       description:
-        "MERN-stack application featuring Stripe payment integration, Cloudinary media hosting, and secure user authentication using JWT tokens and Zod schema validation. Includes responsive UI, instructor dashboard, and a course management system supporting end-to-end content publishing and purchasing workflows.",
-      tech: ["MongoDB", "Express", "React", "Node.js", "Stripe", "Cloudinary", "JWT", "Zod"],
+        "MERN-stack app with Stripe payments, Cloudinary media hosting, and JWT + Zod auth. Responsive UI, instructor dashboard, and full course publishing workflow.",
+      tech: ["MongoDB", "Express", "React", "Node.js", "Stripe", "Cloudinary"],
       category: "Full-Stack",
+      sticker: "✦ shipped",
+      bg: "pop-yellow",
       github: "https://github.com/manishsambari/CourseShip",
       live: "https://courseship.vercel.app",
     },
     {
       title: "FinSight",
-      tagline: "AI Finance Platform For Automated Expense Tracking",
+      tagline: "AI Finance Platform",
       description:
-        "Full-stack AI-powered finance platform for automated expense tracking and real-time insights. Integrated Gemini AI for receipt scanning with accurate data extraction and smart categorization. Designed a modern, responsive UI using Shadcn, with secure data handling implemented through Prisma and Supabase.",
-      tech: ["Next.js", "TailwindCSS", "Supabase", "Gemini AI", "Shadcn UI", "Prisma"],
-      category: "Full-Stack",
+        "Automated expense tracking with Gemini AI receipt scanning, smart categorization, and secure data handling via Prisma + Supabase.",
+      tech: ["Next.js", "Tailwind", "Supabase", "Gemini AI", "Prisma"],
+      category: "AI · Full-Stack",
+      sticker: "★ AI",
+      bg: "pop-pink",
       github: "https://github.com/manishsambari/FinSight",
       live: "https://finsight-eight.vercel.app",
     },
     {
       title: "BrowseAndBuy",
-      tagline: "Student Marketplace for Books & Study Materials",
+      tagline: "Student Book Marketplace",
       description:
-        "A platform where seniors can list old textbooks and materials for juniors to buy. Real-time chat using Socket.io enables seamless communication between buyers and sellers, with a simple and intuitive user flow.",
-      tech: ["React.js", "Node.js", "Express.js", "MongoDB", "Socket.io"],
+        "Seniors list old textbooks, juniors buy them. Real-time chat via Socket.io for seamless buyer↔seller communication.",
+      tech: ["React", "Node.js", "MongoDB", "Socket.io", "Express"],
       category: "Full-Stack",
+      sticker: "♥ social",
+      bg: "pop-blue",
       github: "https://github.com/manishsambari/BrowseAndBuy",
       live: "https://browsenbuy.vercel.app/",
     },
     {
       title: "Discord Bot Ecosystem",
-      tagline: "Multi-Purpose Automation & Moderation System",
+      tagline: "400+ Commands · Multi-Purpose Bot",
       description:
-        "Multi-purpose Discord bot with 400+ commands covering moderation, economy, utilities, and entertainment. Integrated MongoDB Atlas for persistent data storage and personalized server configurations. Improved an existing open-source project by enhancing performance, scalability, and user engagement.",
-      tech: ["Node.js", "Discord.js", "MongoDB", "WebHook", "Giphy", "OpenAI"],
+        "Multi-purpose Discord bot covering moderation, economy, utilities, and entertainment with MongoDB Atlas persistence and OpenAI integration.",
+      tech: ["Node.js", "Discord.js", "MongoDB", "OpenAI", "WebHook"],
       category: "Backend",
+      sticker: "⚡ 400+",
+      bg: "pop-green",
       github: "https://github.com/manishsambari/Discord-Bot-Own",
     },
     {
@@ -46,8 +55,10 @@ const Projects = () => {
       tagline: "Decentralized Fundraising on Ethereum",
       description:
         "Decentralized crowdfunding platform enabling users to create campaigns and raise funds through Ethereum smart contracts.",
-      tech: ["React.js", "Solidity", "Hardhat", "Metamask"],
+      tech: ["React", "Solidity", "Hardhat", "Metamask"],
       category: "Web3",
+      sticker: "✿ web3",
+      bg: "pop-purple",
       github: "https://github.com/manishsambari/Crowdfunding",
     },
   ];
@@ -55,79 +66,90 @@ const Projects = () => {
   return (
     <section className="py-20 px-4">
       <div className="max-w-6xl mx-auto">
-        <div className="mb-12">
-          <div className="font-mono text-xs uppercase tracking-widest text-muted-foreground mb-2">
-            <span className="text-primary">$</span> ls ./projects
+        {/* Heading */}
+        <div className="mb-10 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+          <div>
+            <span className="section-eyebrow pop-pink mb-3">✦ My Work</span>
+            <h2 className="font-display text-4xl md:text-6xl font-bold mt-3">
+              Projects I've built
+            </h2>
           </div>
-          <h2 className="font-mono text-3xl md:text-4xl font-bold">
-            <span className="text-primary">##</span> Projects
-          </h2>
-          <p className="font-mono text-sm text-muted-foreground mt-2 max-w-2xl">
-            // a collection of full-stack applications showcasing modern web development
+          <p className="text-foreground/70 max-w-sm">
+            Full-stack apps, AI tools, and one bot ecosystem with 400+ commands.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
-          {projects.map((project, index) => (
-            <div key={index} className="term-card flex flex-col">
-              {/* Card terminal header */}
-              <div className="border-b border-border bg-secondary/30 px-4 py-2 flex items-center justify-between">
-                <div className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
-                  <FolderGit2 className="w-3.5 h-3.5 text-primary" />
-                  <span>./{project.title.toLowerCase().replace(/\s+/g, "-")}</span>
-                </div>
-                <span className="font-mono text-[10px] uppercase tracking-widest text-accent">
-                  [{project.category}]
+        {/* Bento grid */}
+        <div className="grid grid-cols-12 gap-4 md:gap-5">
+          {projects.map((p, i) => {
+            // Vary sizes for bento feel: first card spans more
+            const span =
+              i === 0
+                ? "col-span-12 md:col-span-7"
+                : i === 1
+                ? "col-span-12 md:col-span-5"
+                : i === 2
+                ? "col-span-12 md:col-span-5"
+                : i === 3
+                ? "col-span-12 md:col-span-7"
+                : "col-span-12";
+            return (
+              <motion.div
+                key={p.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-80px" }}
+                transition={{ duration: 0.45, delay: (i % 4) * 0.05 }}
+                className={`bento p-6 md:p-7 relative flex flex-col ${p.bg} ${span}`}
+              >
+                <span className="sticker pop-card absolute top-4 right-4 -rotate-3 wobble-soft">
+                  {p.sticker}
                 </span>
-              </div>
 
-              <div className="p-5 flex-1 flex flex-col gap-4">
-                <div>
-                  <h3 className="font-mono text-xl font-bold text-foreground">
-                    {project.title}
-                  </h3>
-                  <p className="font-mono text-xs text-primary mt-1">
-                    → {project.tagline}
-                  </p>
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="text-xs font-bold uppercase tracking-wider px-2 py-1 bg-card border-2 border-foreground rounded-full">
+                    {p.category}
+                  </span>
                 </div>
 
-                <p className="font-mono text-sm text-foreground/75 leading-relaxed">
-                  {project.description}
-                </p>
+                <h3 className="font-display text-3xl md:text-4xl font-bold mb-1">
+                  {p.title}
+                </h3>
+                <p className="font-semibold text-foreground/75 mb-4">{p.tagline}</p>
+                <p className="text-foreground/85 mb-5 leading-relaxed">{p.description}</p>
 
-                <div className="flex flex-wrap gap-1.5">
-                  {project.tech.map((t) => (
-                    <span key={t} className="term-chip">
-                      {t}
-                    </span>
+                <div className="flex flex-wrap gap-2 mb-5">
+                  {p.tech.map((t) => (
+                    <span key={t} className="chip bg-card">{t}</span>
                   ))}
                 </div>
 
-                <div className="flex gap-2 mt-auto pt-2 border-t border-border">
+                <div className="flex flex-wrap gap-2 mt-auto">
                   <a
-                    href={project.github}
+                    href={p.github}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-2 px-3 py-1.5 text-xs font-mono uppercase tracking-wider border border-border text-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors"
+                    className="pill-btn"
                   >
-                    <Github className="w-3.5 h-3.5" />
-                    source
+                    <Github className="w-4 h-4" />
+                    Source
                   </a>
-                  {project.live && (
+                  {p.live && (
                     <a
-                      href={project.live}
+                      href={p.live}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center gap-2 px-3 py-1.5 text-xs font-mono uppercase tracking-wider border border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
+                      className="pill-btn pop-yellow"
                     >
-                      <ExternalLink className="w-3.5 h-3.5" />
-                      live demo
+                      <ExternalLink className="w-4 h-4" />
+                      Live
+                      <ArrowUpRight className="w-3.5 h-3.5" />
                     </a>
                   )}
                 </div>
-              </div>
-            </div>
-          ))}
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

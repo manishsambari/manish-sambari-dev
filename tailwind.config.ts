@@ -19,9 +19,18 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				sans: ['JetBrains Mono', 'Space Mono', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
-				mono: ['JetBrains Mono', 'Space Mono', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
-				display: ['Space Mono', 'JetBrains Mono', 'ui-monospace', 'monospace'],
+				sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+				display: ['Space Grotesk', 'Inter', 'system-ui', 'sans-serif'],
+				mono: ['JetBrains Mono', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
+			},
+			boxShadow: {
+				brutal: '6px 6px 0 0 hsl(var(--foreground))',
+				'brutal-sm': '4px 4px 0 0 hsl(var(--foreground))',
+				'brutal-lg': '8px 8px 0 0 hsl(var(--foreground))',
+				'brutal-xl': '12px 12px 0 0 hsl(var(--foreground))',
+			},
+			borderWidth: {
+				'3': '3px',
 			},
 			colors: {
 				border: 'hsl(var(--border))',

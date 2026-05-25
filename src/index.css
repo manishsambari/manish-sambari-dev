@@ -3,75 +3,93 @@
 @tailwind utilities;
 
 /*
-  BRUTALIST / TERMINAL THEME
-  - Pure black canvas, hard 1px borders, no soft shadows, no gradients.
-  - Lime (#A3E635) as primary accent, amber (#FBBF24) as secondary highlight.
-  - Monospace everywhere. Cursor blink. Scanline ambient overlay.
+  PLAYFUL NEO-BRUTALIST + EDITORIAL THEME
+  - Cream canvas, jet-black borders (3px), hard 6px offset shadows.
+  - Candy accents: yellow, pink, blue, green, purple, orange.
+  - Space Grotesk display + Inter body. Stickers wobble, tiles lift.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 4%;
-    --foreground: 0 0% 96%;
+    --background: 48 33% 96%;            /* warm cream */
+    --foreground: 0 0% 8%;                /* near-black ink */
 
-    --card: 0 0% 6%;
-    --card-foreground: 0 0% 96%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 8%;
 
-    --popover: 0 0% 6%;
-    --popover-foreground: 0 0% 96%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 8%;
 
-    --primary: 84 81% 56%;            /* lime-400 */
-    --primary-foreground: 0 0% 4%;
+    --primary: 50 100% 60%;               /* candy yellow */
+    --primary-foreground: 0 0% 8%;
 
-    --secondary: 0 0% 10%;
-    --secondary-foreground: 0 0% 96%;
+    --secondary: 0 0% 100%;
+    --secondary-foreground: 0 0% 8%;
 
-    --muted: 0 0% 10%;
-    --muted-foreground: 0 0% 60%;
+    --muted: 48 20% 92%;
+    --muted-foreground: 0 0% 35%;
 
-    --accent: 45 96% 56%;             /* amber-400 */
-    --accent-foreground: 0 0% 4%;
+    --accent: 333 100% 71%;               /* candy pink */
+    --accent-foreground: 0 0% 8%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 22%;
-    --input: 0 0% 10%;
-    --ring: 84 81% 56%;
+    --border: 0 0% 8%;                    /* hard black border everywhere */
+    --input: 0 0% 100%;
+    --ring: 333 100% 71%;
 
-    --radius: 0rem;                   /* NO rounding — brutalist */
+    --radius: 1rem;                        /* chunky rounded corners */
 
-    --term-lime: 84 81% 56%;
-    --term-amber: 45 96% 56%;
-    --term-cyan: 188 95% 55%;
-    --term-magenta: 320 85% 60%;
-    --term-red: 0 84% 60%;
-    --term-dim: 0 0% 45%;
+    /* Candy palette — accessible alongside black borders */
+    --pop-yellow: 50 100% 60%;             /* #FFD93D-ish */
+    --pop-pink:   333 100% 71%;            /* #FF6BB5 */
+    --pop-blue:   217 100% 67%;            /* #5B9CFF */
+    --pop-green:  150 65% 55%;             /* #4ECDA0 */
+    --pop-purple: 262 83% 75%;             /* #BBA0FF */
+    --pop-orange: 24 100% 65%;             /* #FF9A4D */
+    --pop-mint:   162 70% 70%;             /* #80E4C5 */
+    --pop-coral:  10 100% 72%;             /* #FF9277 */
 
-    --sidebar-background: 0 0% 4%;
-    --sidebar-foreground: 0 0% 96%;
-    --sidebar-primary: 84 81% 56%;
-    --sidebar-primary-foreground: 0 0% 4%;
-    --sidebar-accent: 0 0% 10%;
-    --sidebar-accent-foreground: 0 0% 96%;
-    --sidebar-border: 0 0% 22%;
-    --sidebar-ring: 84 81% 56%;
+    --shadow-brutal: 6px 6px 0 0 hsl(var(--foreground));
+    --shadow-brutal-sm: 4px 4px 0 0 hsl(var(--foreground));
+    --shadow-brutal-lg: 8px 8px 0 0 hsl(var(--foreground));
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 0 0% 8%;
+    --sidebar-primary: 50 100% 60%;
+    --sidebar-primary-foreground: 0 0% 8%;
+    --sidebar-accent: 48 20% 92%;
+    --sidebar-accent-foreground: 0 0% 8%;
+    --sidebar-border: 0 0% 8%;
+    --sidebar-ring: 333 100% 71%;
   }
 }
 
 @layer base {
   * {
-    @apply border-border;
+    border-color: hsl(var(--border));
   }
 
   html {
-    font-family: 'JetBrains Mono', 'Space Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   }
 
   body {
     @apply bg-background text-foreground antialiased;
     min-height: 100vh;
-    font-feature-settings: "ss01", "ss02", "calt", "liga";
+    font-feature-settings: "ss01", "cv11";
+    background-color: hsl(var(--background));
+    background-image:
+      linear-gradient(hsl(var(--foreground) / 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--foreground) / 0.06) 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-position: -1px -1px;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+    letter-spacing: -0.02em;
   }
 
   ::selection {
@@ -81,219 +99,152 @@
 }
 
 @layer components {
-  /* Hard-bordered terminal card */
-  .term-card {
-    @apply bg-card border border-border;
-    position: relative;
-    transition: border-color 120ms linear, transform 120ms linear, box-shadow 120ms linear;
+  /* Bento tile — thick border + hard offset shadow */
+  .bento {
+    @apply bg-card border-[3px] border-foreground rounded-2xl;
+    box-shadow: var(--shadow-brutal);
+    transition: transform 220ms cubic-bezier(0.34, 1.56, 0.64, 1),
+                box-shadow 220ms cubic-bezier(0.34, 1.56, 0.64, 1);
   }
-  .term-card:hover {
-    border-color: hsl(var(--primary));
-    box-shadow: 4px 4px 0 0 hsl(var(--primary));
-    transform: translate(-2px, -2px);
-  }
-
-  /* Terminal window header with traffic-light dots */
-  .term-window {
-    @apply border border-border bg-card;
-  }
-  .term-window-header {
-    @apply border-b border-border bg-secondary/40 px-4 py-2 flex items-center gap-2;
-  }
-  .term-dot {
-    @apply inline-block w-3 h-3 border border-border;
-  }
-
-  /* Sharp text accent */
-  .term-prompt::before {
-    content: "$ ";
-    color: hsl(var(--primary));
-    font-weight: 600;
-  }
-
-  .term-arrow::before {
-    content: "→ ";
-    color: hsl(var(--primary));
-  }
-
-  .term-bullet::before {
-    content: "▸ ";
-    color: hsl(var(--accent));
-  }
-
-  /* Brutalist button — flat, hard, with offset hover */
-  .btn-brutal {
-    @apply inline-flex items-center justify-center gap-2 px-5 py-3 text-sm font-semibold uppercase tracking-wider border border-border bg-card text-foreground;
-    transition: transform 120ms linear, box-shadow 120ms linear, background-color 120ms linear, color 120ms linear;
-  }
-  .btn-brutal:hover {
-    background: hsl(var(--primary));
-    color: hsl(var(--primary-foreground));
-    border-color: hsl(var(--primary));
+  .bento:hover {
     transform: translate(-3px, -3px);
+    box-shadow: 9px 9px 0 0 hsl(var(--foreground));
+  }
+  .bento-sm {
+    box-shadow: var(--shadow-brutal-sm);
+  }
+  .bento-sm:hover {
+    transform: translate(-2px, -2px);
     box-shadow: 6px 6px 0 0 hsl(var(--foreground));
   }
-  .btn-brutal:active {
-    transform: translate(0, 0);
+  .bento-lg {
+    box-shadow: var(--shadow-brutal-lg);
+  }
+  .bento-lg:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 12px 12px 0 0 hsl(var(--foreground));
+  }
+  .bento-flat {
+    @apply bg-card border-[3px] border-foreground rounded-2xl;
+    transition: transform 200ms ease;
+  }
+
+  /* Pop accent tiles */
+  .pop-yellow { background-color: hsl(var(--pop-yellow)); }
+  .pop-pink   { background-color: hsl(var(--pop-pink)); }
+  .pop-blue   { background-color: hsl(var(--pop-blue)); }
+  .pop-green  { background-color: hsl(var(--pop-green)); }
+  .pop-purple { background-color: hsl(var(--pop-purple)); }
+  .pop-orange { background-color: hsl(var(--pop-orange)); }
+  .pop-mint   { background-color: hsl(var(--pop-mint)); }
+  .pop-coral  { background-color: hsl(var(--pop-coral)); }
+
+  /* Sticker — small rotated label */
+  .sticker {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 border-2 border-foreground rounded-full bg-card text-xs font-bold;
+    box-shadow: 3px 3px 0 0 hsl(var(--foreground));
+    transition: transform 180ms ease;
+  }
+  .sticker:hover {
+    transform: rotate(-2deg) scale(1.05);
+  }
+
+  /* Chunky pill button */
+  .pill-btn {
+    @apply inline-flex items-center gap-2 px-5 py-3 font-bold text-sm border-[3px] border-foreground rounded-full bg-card;
+    box-shadow: 4px 4px 0 0 hsl(var(--foreground));
+    transition: transform 180ms cubic-bezier(0.34, 1.56, 0.64, 1),
+                box-shadow 180ms ease,
+                background-color 180ms ease;
+  }
+  .pill-btn:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 0 hsl(var(--foreground));
+  }
+  .pill-btn:active {
+    transform: translate(2px, 2px);
     box-shadow: 0 0 0 0 hsl(var(--foreground));
   }
-  .btn-brutal-accent {
-    @apply bg-primary text-primary-foreground border-primary;
+
+  /* Chip — colorful skill pill */
+  .chip {
+    @apply inline-flex items-center px-3 py-1 text-xs font-semibold border-2 border-foreground rounded-full bg-card;
+    transition: transform 150ms ease, background-color 150ms ease;
   }
-  .btn-brutal-accent:hover {
-    background: hsl(var(--accent));
-    color: hsl(var(--accent-foreground));
-    border-color: hsl(var(--accent));
-    box-shadow: 6px 6px 0 0 hsl(var(--primary));
+  .chip:hover {
+    transform: translateY(-2px) rotate(-1deg);
   }
 
-  /* Section heading with leading "##" */
-  .section-heading {
-    @apply font-mono uppercase tracking-widest text-foreground;
-  }
-  .section-heading-prefix {
-    color: hsl(var(--primary));
-    margin-right: 0.5rem;
-  }
-
-  /* ASCII divider */
-  .ascii-divider {
-    color: hsl(var(--border));
-    letter-spacing: 0.1em;
-    white-space: nowrap;
-    overflow: hidden;
-    user-select: none;
-  }
-
-  /* Tag chip */
-  .term-chip {
-    @apply inline-flex items-center px-2 py-0.5 text-xs font-mono uppercase tracking-wider border border-border bg-secondary/40 text-muted-foreground;
-    transition: all 120ms linear;
-  }
-  .term-chip:hover {
-    border-color: hsl(var(--primary));
-    color: hsl(var(--primary));
-    background: hsl(var(--primary) / 0.08);
-  }
-
-  /* Status pill */
-  .status-pill {
-    @apply inline-flex items-center gap-2 px-3 py-1 text-xs font-mono uppercase tracking-wider border border-primary bg-primary/10 text-primary;
-  }
-  .status-pill::before {
-    content: "";
-    width: 6px;
-    height: 6px;
-    background: hsl(var(--primary));
-    box-shadow: 0 0 6px hsl(var(--primary));
-    animation: blink 1.2s steps(2, end) infinite;
+  /* Section heading with optional underline accent */
+  .section-eyebrow {
+    @apply inline-block px-3 py-1 text-xs font-bold uppercase tracking-wider border-2 border-foreground rounded-full bg-card;
+    box-shadow: 3px 3px 0 0 hsl(var(--foreground));
   }
 }
 
-/* Cursor blink */
-.cursor-blink::after {
-  content: "▊";
-  color: hsl(var(--primary));
-  margin-left: 2px;
-  animation: blink 1s steps(2, start) infinite;
+/* Animations — subtle */
+.float-slow {
+  animation: float-slow 6s ease-in-out infinite;
 }
-
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+.float-slower {
+  animation: float-slow 8s ease-in-out infinite;
 }
-
-/* Subtle scanline overlay (CRT vibe, very mild) */
-.scanlines::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background: repeating-linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0.02) 0,
-    rgba(255, 255, 255, 0.02) 1px,
-    transparent 1px,
-    transparent 3px
-  );
-  z-index: 1;
+.wobble {
+  animation: wobble 4s ease-in-out infinite;
 }
-
-/* Grid background */
-.grid-bg {
-  background-image:
-    linear-gradient(hsl(var(--border) / 0.4) 1px, transparent 1px),
-    linear-gradient(90deg, hsl(var(--border) / 0.4) 1px, transparent 1px);
-  background-size: 48px 48px;
-  background-position: -1px -1px;
+.wobble-soft {
+  animation: wobble-soft 5s ease-in-out infinite;
 }
-
-/* Animation utilities (kept minimal — terminal style is mostly static) */
-.animate-fade-in {
-  animation: fade-in 0.5s ease-out forwards;
+.animate-fade-up {
+  animation: fade-up 0.5s ease-out forwards;
   opacity: 0;
+  transform: translateY(12px);
 }
 
-.animate-slide-up {
-  animation: slide-up 0.5s ease-out forwards;
-  opacity: 0;
-  transform: translateY(16px);
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-6px); }
 }
 
-.animate-typewriter {
-  display: inline-block;
-  overflow: hidden;
-  white-space: nowrap;
-  border-right: 2px solid hsl(var(--primary));
-  animation: typewriter 2.2s steps(40, end) forwards, blink 1s step-end infinite;
+@keyframes wobble {
+  0%, 100% { transform: rotate(-3deg); }
+  50%      { transform: rotate(3deg); }
 }
 
-@keyframes fade-in {
-  to {
-    opacity: 1;
-    transform: translateY(0);
+@keyframes wobble-soft {
+  0%, 100% { transform: rotate(-1.5deg); }
+  50%      { transform: rotate(1.5deg); }
+}
+
+@keyframes fade-up {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .float-slow,
+  .float-slower,
+  .wobble,
+  .wobble-soft,
+  .animate-fade-up {
+    animation: none;
   }
 }
 
-@keyframes slide-up {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Legacy class shims so any leftover usage still renders sanely */
+.glass-card,
+.term-card,
+.term-window {
+  @apply bento;
 }
+.term-window-header { @apply hidden; }
+.gradient-text { color: hsl(var(--foreground)); }
+.mint-gradient { color: hsl(var(--foreground)); }
+.mint-glow { box-shadow: none; }
+.scanlines::before { display: none; }
+.grid-bg { background: transparent; }
+.cursor-blink::after { content: ""; }
 
-@keyframes typewriter {
-  from { width: 0; }
-  to { width: 100%; }
-}
-
-/* Boot-up flicker */
-.flicker {
-  animation: flicker 4s infinite;
-}
-
-@keyframes flicker {
-  0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
-    opacity: 1;
-  }
-  20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
-    opacity: 0.85;
-  }
-}
-
-/* Legacy class shims so existing usage still renders cleanly until migrated */
-.glass-card {
-  @apply term-card;
-}
-.gradient-text {
-  color: hsl(var(--primary));
-}
-.mint-gradient {
-  color: hsl(var(--accent));
-}
-.mint-glow {
-  box-shadow: none;
-}
 .animate-float,
 .animate-bounce-in,
 .animate-pulse-glow,
@@ -306,6 +257,16 @@
 .animate-slide-in-right,
 .animate-mint-pulse,
 .animate-floating,
-.animate-gentle-bounce {
+.animate-gentle-bounce,
+.animate-typewriter,
+.flicker {
   animation: none;
+}
+.animate-fade-in {
+  animation: fade-up 0.5s ease-out forwards;
+  opacity: 0;
+}
+.animate-slide-up {
+  animation: fade-up 0.6s ease-out forwards;
+  opacity: 0;
 }

@@ -5,13 +5,13 @@ const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { label: "projects", href: "#projects" },
-    { label: "internships", href: "#internships" },
-    { label: "experience", href: "#experience" },
-    { label: "education", href: "#education" },
-    { label: "skills", href: "#skills" },
-    { label: "achievements", href: "#achievements" },
-    { label: "contact", href: "#contact" },
+    { label: "Projects", href: "#projects" },
+    { label: "Work", href: "#internships" },
+    { label: "Experience", href: "#experience" },
+    { label: "Education", href: "#education" },
+    { label: "Skills", href: "#skills" },
+    { label: "Awards", href: "#achievements" },
+    { label: "Contact", href: "#contact" },
   ];
 
   const downloadResume = () => {
@@ -24,75 +24,69 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur border-b border-border">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="flex items-center justify-between h-14">
-          <div className="flex items-center gap-3">
-            <div className="flex gap-1.5">
-              <span className="w-3 h-3 border border-border bg-destructive/70" />
-              <span className="w-3 h-3 border border-border bg-accent/70" />
-              <span className="w-3 h-3 border border-border bg-primary/70" />
-            </div>
-            <span className="text-sm font-mono text-muted-foreground hidden sm:inline">
-              ~/manish-sambari
-              <span className="text-primary">/dev</span>
+    <nav className="fixed top-4 left-4 right-4 z-50">
+      <div className="max-w-6xl mx-auto">
+        <div className="flex items-center justify-between gap-3 bg-card border-[3px] border-foreground rounded-full px-4 py-2.5 shadow-brutal">
+          {/* Logo */}
+          <a href="#" className="flex items-center gap-2 group">
+            <span className="w-8 h-8 rounded-full pop-pink border-2 border-foreground flex items-center justify-center font-display font-bold text-foreground">
+              M
             </span>
-          </div>
+            <span className="font-display font-bold text-sm hidden sm:inline">manish.dev</span>
+          </a>
 
+          {/* Desktop links */}
           <div className="hidden md:flex items-center gap-1">
             {navItems.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
-                className="px-3 py-1.5 text-xs font-mono uppercase tracking-wider text-muted-foreground hover:text-primary hover:bg-secondary/40 border border-transparent hover:border-border transition-colors"
+                className="px-3 py-1.5 text-sm font-semibold text-foreground/80 hover:text-foreground rounded-full hover:bg-muted transition-colors"
               >
-                ./{item.label}
+                {item.label}
+              </a>
+            ))}
+          </div>
+
+          {/* Resume */}
+          <button
+            onClick={downloadResume}
+            className="hidden md:inline-flex items-center gap-1.5 px-4 py-2 text-sm font-bold border-2 border-foreground rounded-full pop-yellow shadow-brutal-sm hover:-translate-y-0.5 hover:translate-x-0 transition-transform"
+          >
+            <Download className="w-3.5 h-3.5" />
+            Resume
+          </button>
+
+          {/* Mobile toggle */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="md:hidden p-2 border-2 border-foreground rounded-full bg-card"
+            aria-label="Toggle navigation"
+          >
+            {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
+        </div>
+
+        {/* Mobile drawer */}
+        {isOpen && (
+          <div className="md:hidden mt-3 bg-card border-[3px] border-foreground rounded-2xl shadow-brutal p-3 space-y-1">
+            {navItems.map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                onClick={() => setIsOpen(false)}
+                className="block px-3 py-2 text-sm font-semibold rounded-xl hover:bg-muted"
+              >
+                {item.label}
               </a>
             ))}
             <button
-              onClick={downloadResume}
-              className="ml-2 inline-flex items-center gap-2 px-3 py-1.5 text-xs font-mono uppercase tracking-wider border border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
+              onClick={() => { downloadResume(); setIsOpen(false); }}
+              className="w-full mt-2 inline-flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-bold border-2 border-foreground rounded-full pop-yellow"
             >
-              <Download className="w-3.5 h-3.5" />
-              resume.pdf
+              <Download className="w-4 h-4" />
+              Resume
             </button>
-          </div>
-
-          <div className="md:hidden">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="p-2 border border-border text-foreground hover:border-primary hover:text-primary"
-              aria-label="Toggle navigation"
-            >
-              {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-            </button>
-          </div>
-        </div>
-
-        {isOpen && (
-          <div className="md:hidden border-t border-border bg-background">
-            <div className="py-3 space-y-1">
-              {navItems.map((item) => (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  onClick={() => setIsOpen(false)}
-                  className="block px-3 py-2 text-sm font-mono text-muted-foreground hover:text-primary hover:bg-secondary/40"
-                >
-                  ./{item.label}
-                </a>
-              ))}
-              <button
-                onClick={() => {
-                  downloadResume();
-                  setIsOpen(false);
-                }}
-                className="w-full mt-2 inline-flex items-center justify-center gap-2 px-3 py-2 text-sm font-mono uppercase tracking-wider border border-primary text-primary"
-              >
-                <Download className="w-4 h-4" />
-                resume.pdf
-              </button>
-            </div>
           </div>
         )}
       </div>

@@ -1,4 +1,5 @@
-import { Calendar, MapPin, ExternalLink, Terminal } from "lucide-react";
+import { Calendar, MapPin, ExternalLink, Briefcase } from "lucide-react";
+import { motion } from "framer-motion";
 
 const Internships = () => {
   const internships = [
@@ -8,58 +9,55 @@ const Internships = () => {
       period: "February 2026 – Present",
       location: "Mumbai, India",
       current: true,
+      bg: "pop-yellow",
       bullets: [
-        "Developed and scaled a Production Monitoring System, implementing RBAC for 7+ user roles and improving system scalability, access management, and overall workflow efficiency.",
-        "Migrated a legacy EJS application to React.js and redesigned the backend into a modular architecture, achieving a 70% reduction in API latency through PostgreSQL query optimization and backend refactoring.",
-        "Architected LeadLens, a B2B lead automation platform integrating the IndiaMart API with a custom heuristic scoring engine, automated deduplication, and email sequencing to streamline the end-to-end sales funnel.",
+        "Developed and scaled a Production Monitoring System with RBAC for 7+ user roles, improving scalability and workflow efficiency.",
+        "Migrated legacy EJS → React.js and redesigned the backend into modular architecture, achieving a 70% reduction in API latency.",
+        "Architected a B2B lead automation system integrating the IndiaMart API with a heuristic scoring engine and email sequencing.",
       ],
-      skills: ["React.js", "Node.js", "PostgreSQL", "RBAC", "EJS Migration", "B2B Automation", "API Design"],
+      skills: ["React.js", "Node.js", "PostgreSQL", "RBAC", "B2B Automation"],
       certificateLink: "#",
     },
     {
       title: "Full Stack Developer Intern",
       company: "NullClass",
-      period: "June 2025 – November 2025",
+      period: "Jun 2025 – Nov 2025",
       location: "Remote",
+      bg: "pop-pink",
       bullets: [
-        "Built the MERN-stack backend for a course-selling platform, including APIs, authentication, and database schema design.",
+        "Built the MERN-stack backend for a course-selling platform including APIs, authentication, and database schema design.",
         "Developed secure login/signup flows using JWT and handled role-based access control.",
-        "Assisted frontend development by integrating APIs, fixing UI issues, and improving the overall user experience.",
-        "Optimized MongoDB queries and backend logic to improve speed, stability, and data accuracy.",
-        "Collaborated with team to test features, manage deployments, and maintain clean, maintainable code.",
+        "Optimized MongoDB queries and backend logic for speed, stability, and data accuracy.",
       ],
-      skills: ["MERN Stack", "JWT", "MongoDB", "REST APIs", "Authentication", "Deployments"],
+      skills: ["MERN", "JWT", "MongoDB", "REST APIs", "Auth"],
       certificateLink: "#",
     },
     {
       title: "Frontend Developer Intern",
       company: "Dejorix Tech",
-      period: "January 2025 – March 2025",
+      period: "Jan 2025 – Mar 2025",
       location: "Mumbai, India",
+      bg: "pop-blue",
       bullets: [
-        "Built responsive user interfaces with React.js and Tailwind CSS, improving frontend load performance by 25% through efficient state management and component lazy loading.",
-        "Integrated Three.js 3D models into web environments, resulting in a 40% increase in user engagement while maintaining consistent 60 FPS performance benchmarks.",
-        "Developed clean, responsive React.js interfaces with reusable components and smooth user interactions.",
-        "Integrated REST APIs and optimized frontend performance for faster loading and better user experience.",
-        "Collaborated with designers to refine layouts, maintain consistent UI/UX, and fix visual or functional issues.",
-        "Implemented efficient state management and modular component structures to ensure scalable, maintainable frontend code.",
+        "Built responsive UIs with React.js and Tailwind, improving frontend load performance by 25% via state management & lazy loading.",
+        "Integrated Three.js 3D models into web environments — +40% engagement, consistent 60 FPS performance.",
+        "Collaborated with designers to refine layouts and maintain consistent UI/UX.",
       ],
-      skills: ["React.js", "Tailwind CSS", "Three.js", "Lazy Loading", "REST APIs", "UI/UX"],
+      skills: ["React.js", "Tailwind", "Three.js", "REST APIs", "UI/UX"],
       certificateLink: "https://drive.google.com/file/d/1Mbk2yi2rA5J4VS4_TC1QiNbv7ENKmaLQ/view",
     },
     {
       title: "Python Developer Intern",
       company: "Pythonic Labs",
-      period: "April 2024 – May 2024",
-      location: "Mumbai, Maharashtra",
+      period: "Apr 2024 – May 2024",
+      location: "Mumbai, India",
+      bg: "pop-green",
       bullets: [
-        "Developed Python- and SQL-based solutions for analytics, data visualization, and API integration.",
-        "Built projects such as Vendor Performance Analysis, Banking EDA, and Ola Data Analytics, converting raw datasets into clear reports and dashboards.",
-        "Delivered actionable insights that improved reporting accuracy and decision-making efficiency.",
-        "Automated multiple data-processing workflows to reduce manual effort and improve scalability.",
-        "Collaborated with senior developers to refine project logic, enhance data pipelines, and optimize SQL queries for faster execution.",
+        "Built Python + SQL solutions for analytics, data visualization, and API integration.",
+        "Delivered projects like Vendor Performance Analysis, Banking EDA, and Ola Data Analytics.",
+        "Automated data-processing workflows to reduce manual effort and improve scalability.",
       ],
-      skills: ["Python", "SQL", "Data Analytics", "Power BI", "Automation"],
+      skills: ["Python", "SQL", "Analytics", "Power BI"],
       certificateLink: "https://drive.google.com/file/d/1u5T6SH-V91cPwbBka782u1yr0P0AlIf_/view",
     },
   ];
@@ -67,87 +65,79 @@ const Internships = () => {
   return (
     <section className="py-20 px-4">
       <div className="max-w-5xl mx-auto">
-        <div className="mb-12">
-          <div className="font-mono text-xs uppercase tracking-widest text-muted-foreground mb-2">
-            <span className="text-primary">$</span> cat work_experience.log
-          </div>
-          <h2 className="font-mono text-3xl md:text-4xl font-bold">
-            <span className="text-primary">##</span> Work Experience
+        <div className="mb-10">
+          <span className="section-eyebrow pop-yellow">★ Experience</span>
+          <h2 className="font-display text-4xl md:text-6xl font-bold mt-3">
+            Where I've worked
           </h2>
-          <p className="font-mono text-sm text-muted-foreground mt-2">
-            // internships that shaped my engineering journey
-          </p>
         </div>
 
         <div className="space-y-5">
-          {internships.map((internship, index) => (
-            <div key={index} className="term-card">
-              <div className="border-b border-border bg-secondary/30 px-4 py-2 flex items-center gap-2 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
-                <Terminal className="w-3.5 h-3.5 text-primary" />
-                <span>~/{internship.company.toLowerCase().replace(/[^a-z0-9]+/g, "_").replace(/^_+|_+$/g, "")}.log</span>
-                {internship.current && (
-                  <span className="inline-flex items-center gap-1.5 ml-2 px-2 py-0.5 border border-primary text-primary text-[9px]">
-                    <span className="w-1.5 h-1.5 bg-primary animate-pulse" />
-                    LIVE
-                  </span>
-                )}
-                <span className="ml-auto text-accent">#{String(index + 1).padStart(2, "0")}</span>
-              </div>
+          {internships.map((it, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.45, delay: i * 0.05 }}
+              className={`bento p-6 md:p-8 relative ${it.bg}`}
+            >
+              {it.current && (
+                <span className="sticker pop-card absolute -top-3 -right-3 rotate-6 wobble">
+                  <span className="w-2 h-2 rounded-full bg-foreground animate-pulse" />
+                  current role
+                </span>
+              )}
 
-              <div className="p-6">
-                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-3 mb-4">
-                  <div>
-                    <h3 className="font-mono text-lg md:text-xl font-bold text-foreground">
-                      {internship.title}
-                    </h3>
-                    <div className="font-mono text-sm text-primary mt-0.5">
-                      @ {internship.company}
-                    </div>
-                    <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mt-2 text-xs font-mono text-muted-foreground">
-                      <span className="inline-flex items-center gap-1.5">
-                        <Calendar className="w-3.5 h-3.5 text-primary" />
-                        {internship.period}
-                      </span>
-                      <span className="inline-flex items-center gap-1.5">
-                        <MapPin className="w-3.5 h-3.5 text-primary" />
-                        {internship.location}
-                      </span>
-                    </div>
-                  </div>
-                  {internship.certificateLink !== "#" && (
-                    <a
-                      href={internship.certificateLink}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="self-start inline-flex items-center gap-2 px-3 py-1.5 text-xs font-mono uppercase tracking-wider border border-border text-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors"
-                    >
-                      <ExternalLink className="w-3.5 h-3.5" />
-                      certificate
-                    </a>
-                  )}
-                </div>
-
-                <ul className="space-y-1.5 mb-4">
-                  {internship.bullets.map((b, i) => (
-                    <li
-                      key={i}
-                      className="font-mono text-sm text-foreground/80 leading-relaxed pl-5 relative"
-                    >
-                      <span className="absolute left-0 text-primary">▸</span>
-                      {b}
-                    </li>
-                  ))}
-                </ul>
-
-                <div className="flex flex-wrap gap-1.5 pt-3 border-t border-border">
-                  {internship.skills.map((s) => (
-                    <span key={s} className="term-chip">
-                      {s}
+              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
+                <div>
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="inline-flex items-center gap-1.5 px-2 py-1 bg-card border-2 border-foreground rounded-full text-xs font-bold">
+                      <Briefcase className="w-3 h-3" />
+                      Internship
                     </span>
-                  ))}
+                  </div>
+                  <h3 className="font-display text-2xl md:text-3xl font-bold">{it.title}</h3>
+                  <p className="font-bold text-lg mt-1">@ {it.company}</p>
+                  <div className="flex flex-wrap items-center gap-4 mt-2 text-sm text-foreground/75">
+                    <span className="inline-flex items-center gap-1.5">
+                      <Calendar className="w-3.5 h-3.5" />
+                      {it.period}
+                    </span>
+                    <span className="inline-flex items-center gap-1.5">
+                      <MapPin className="w-3.5 h-3.5" />
+                      {it.location}
+                    </span>
+                  </div>
                 </div>
+                {it.certificateLink !== "#" && (
+                  <a
+                    href={it.certificateLink}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="pill-btn bg-card self-start"
+                  >
+                    <ExternalLink className="w-4 h-4" />
+                    Certificate
+                  </a>
+                )}
               </div>
-            </div>
+
+              <ul className="space-y-2 mb-5">
+                {it.bullets.map((b, j) => (
+                  <li key={j} className="flex gap-2.5">
+                    <span className="text-foreground font-bold mt-0.5">→</span>
+                    <span className="text-foreground/90 leading-relaxed">{b}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="flex flex-wrap gap-2 pt-4 border-t-2 border-dashed border-foreground/30">
+                {it.skills.map((s) => (
+                  <span key={s} className="chip bg-card">{s}</span>
+                ))}
+              </div>
+            </motion.div>
           ))}
         </div>
       </div>

@@ -1,173 +1,150 @@
 import { Mail, Phone, MapPin, Github, Linkedin, MessageCircle, Instagram, Send } from "lucide-react";
+import { motion } from "framer-motion";
 
 const Contact = () => {
   const contactInfo = [
-    {
-      icon: <Mail className="w-4 h-4" />,
-      label: "email",
-      value: "sambarimanish@gmail.com",
-      href: "mailto:sambarimanish@gmail.com",
-    },
-    {
-      icon: <Phone className="w-4 h-4" />,
-      label: "phone",
-      value: "+91 9764201151",
-      href: "tel:+919764201151",
-    },
-    {
-      icon: <MapPin className="w-4 h-4" />,
-      label: "location",
-      value: "Thane, Maharashtra, India",
-      href: null,
-    },
+    { icon: <Mail className="w-4 h-4" />, label: "Email", value: "sambarimanish@gmail.com", href: "mailto:sambarimanish@gmail.com" },
+    { icon: <Phone className="w-4 h-4" />, label: "Phone", value: "+91 9764201151", href: "tel:+919764201151" },
+    { icon: <MapPin className="w-4 h-4" />, label: "Location", value: "Thane, Maharashtra, India", href: null },
   ];
 
   const socialLinks = [
     { icon: <Github className="w-4 h-4" />, label: "GitHub", href: "https://github.com/manishsambari" },
-    { icon: <Linkedin className="w-4 h-4" />, label: "LinkedIn", href: "https://linkedin.com/in/manish-sambari" },
+    { icon: <Linkedin className="w-4 h-4" />, label: "LinkedIn", href: "https://linkedin.com/in/manishsambari" },
     { icon: <Instagram className="w-4 h-4" />, label: "Instagram", href: "https://instagram.com/manish.sambari" },
-    { icon: <MessageCircle className="w-4 h-4" />, label: "X", href: "https://x.com/sambarimanish" },
+    { icon: <MessageCircle className="w-4 h-4" />, label: "X", href: "https://x.com/manish_exe" },
   ];
 
   return (
     <section className="py-20 px-4">
-      <div className="max-w-5xl mx-auto">
-        <div className="mb-12">
-          <div className="font-mono text-xs uppercase tracking-widest text-muted-foreground mb-2">
-            <span className="text-primary">$</span> ping manish --reach-out
-          </div>
-          <h2 className="font-mono text-3xl md:text-4xl font-bold">
-            <span className="text-primary">##</span> Let&apos;s Connect
+      <div className="max-w-6xl mx-auto">
+        <div className="mb-10 text-center">
+          <span className="section-eyebrow pop-pink">✿ Hello?</span>
+          <h2 className="font-display text-4xl md:text-6xl font-bold mt-3">
+            Let's build something.
           </h2>
-          <p className="font-mono text-sm text-muted-foreground mt-2">
-            // available for freelance, full-time, &amp; collaborations
+          <p className="text-foreground/70 mt-3 max-w-md mx-auto">
+            Available for freelance, full-time, &amp; collaborations.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-5">
-          {/* Contact info */}
-          <div className="term-card">
-            <div className="border-b border-border bg-secondary/30 px-4 py-2 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
-              ./contact.info
+        <div className="grid grid-cols-12 gap-4 md:gap-5">
+          {/* Big greeting tile */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.45 }}
+            className="bento bento-lg p-8 col-span-12 md:col-span-7 pop-yellow relative"
+          >
+            <span className="sticker pop-pink absolute -top-3 -left-3 -rotate-6 wobble">
+              ✦ say hi!
+            </span>
+            <h3 className="font-display text-3xl md:text-4xl font-bold mb-4">
+              Got a project<br />or just want to chat?
+            </h3>
+            <p className="text-foreground/80 mb-6 max-w-md">
+              I read every message. Whether it's a freelance gig, a full-time role, or you
+              just want to talk about React — drop me a line.
+            </p>
+            <div className="space-y-2">
+              {contactInfo.map((c) => (
+                <div key={c.label} className="flex items-center gap-3 px-4 py-2.5 bg-card border-2 border-foreground rounded-full">
+                  <span className="text-foreground">{c.icon}</span>
+                  {c.href ? (
+                    <a href={c.href} className="font-semibold text-sm hover:underline">
+                      {c.value}
+                    </a>
+                  ) : (
+                    <span className="font-semibold text-sm">{c.value}</span>
+                  )}
+                </div>
+              ))}
             </div>
-            <div className="p-5 space-y-4">
-              <div className="space-y-2">
-                {contactInfo.map((c) => (
-                  <div
-                    key={c.label}
-                    className="flex items-center gap-3 px-3 py-2 border border-border bg-secondary/20"
+          </motion.div>
+
+          {/* Quick actions stack */}
+          <div className="col-span-12 md:col-span-5 grid grid-cols-1 gap-4 md:gap-5">
+            <motion.button
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: 0.05 }}
+              onClick={() => window.open("https://wa.me/919764201151", "_blank")}
+              className="bento p-5 pop-green text-left flex items-center gap-4"
+            >
+              <div className="w-12 h-12 bg-card border-2 border-foreground rounded-full flex items-center justify-center shrink-0">
+                <Send className="w-5 h-5" />
+              </div>
+              <div>
+                <div className="font-display font-bold text-lg">WhatsApp</div>
+                <div className="text-sm text-foreground/75">Quickest reply</div>
+              </div>
+            </motion.button>
+
+            <motion.button
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: 0.1 }}
+              onClick={() => window.open("tel:+919764201151", "_self")}
+              className="bento p-5 pop-blue text-left flex items-center gap-4"
+            >
+              <div className="w-12 h-12 bg-card border-2 border-foreground rounded-full flex items-center justify-center shrink-0">
+                <Phone className="w-5 h-5" />
+              </div>
+              <div>
+                <div className="font-display font-bold text-lg">Schedule a call</div>
+                <div className="text-sm text-foreground/75">Let's talk it through</div>
+              </div>
+            </motion.button>
+
+            <motion.button
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: 0.15 }}
+              onClick={() => window.open("https://github.com/manishsambari", "_blank")}
+              className="bento p-5 pop-purple text-left flex items-center gap-4"
+            >
+              <div className="w-12 h-12 bg-card border-2 border-foreground rounded-full flex items-center justify-center shrink-0">
+                <Github className="w-5 h-5" />
+              </div>
+              <div>
+                <div className="font-display font-bold text-lg">Browse code</div>
+                <div className="text-sm text-foreground/75">See what I've shipped</div>
+              </div>
+            </motion.button>
+          </div>
+
+          {/* Socials row */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: 0.2 }}
+            className="bento p-5 col-span-12 bg-card"
+          >
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+              <p className="font-display font-bold text-lg">
+                Find me on the internet →
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {socialLinks.map((s) => (
+                  <a
+                    key={s.label}
+                    href={s.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="pill-btn"
                   >
-                    <span className="text-primary">{c.icon}</span>
-                    <div className="flex-1 min-w-0">
-                      <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
-                        {c.label}
-                      </div>
-                      {c.href ? (
-                        <a
-                          href={c.href}
-                          className="font-mono text-sm text-foreground hover:text-primary break-all"
-                        >
-                          {c.value}
-                        </a>
-                      ) : (
-                        <div className="font-mono text-sm text-foreground">{c.value}</div>
-                      )}
-                    </div>
-                  </div>
+                    {s.icon}
+                    {s.label}
+                  </a>
                 ))}
               </div>
-
-              <div className="pt-4 border-t border-border">
-                <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-3">
-                  // socials
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {socialLinks.map((s) => (
-                    <a
-                      key={s.label}
-                      href={s.href}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center gap-2 px-3 py-1.5 text-xs font-mono uppercase tracking-wider border border-border text-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors"
-                    >
-                      {s.icon}
-                      {s.label}
-                    </a>
-                  ))}
-                </div>
-              </div>
-
-              <div className="pt-4 border-t border-border">
-                <span className="status-pill">Open to Opportunities</span>
-              </div>
             </div>
-          </div>
-
-          {/* Quick actions */}
-          <div className="term-card">
-            <div className="border-b border-border bg-secondary/30 px-4 py-2 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
-              ./quick_actions.sh
-            </div>
-            <div className="p-5 space-y-3">
-              <button
-                onClick={() => window.open("https://wa.me/919764201151", "_blank")}
-                className="w-full text-left flex items-center gap-3 px-4 py-3 border border-border bg-secondary/20 hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors group"
-              >
-                <Send className="w-5 h-5 text-primary group-hover:text-primary-foreground" />
-                <div>
-                  <div className="font-mono text-sm font-bold uppercase tracking-wider">
-                    send a message
-                  </div>
-                  <div className="font-mono text-xs opacity-80">// chat on whatsapp</div>
-                </div>
-              </button>
-
-              <button
-                onClick={() => window.open("tel:+919764201151", "_self")}
-                className="w-full text-left flex items-center gap-3 px-4 py-3 border border-border bg-secondary/20 hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors group"
-              >
-                <Phone className="w-5 h-5 text-primary group-hover:text-primary-foreground" />
-                <div>
-                  <div className="font-mono text-sm font-bold uppercase tracking-wider">
-                    schedule a call
-                  </div>
-                  <div className="font-mono text-xs opacity-80">// discuss opportunities</div>
-                </div>
-              </button>
-
-              <button
-                onClick={() => window.open("https://github.com/manishsambari", "_blank")}
-                className="w-full text-left flex items-center gap-3 px-4 py-3 border border-border bg-secondary/20 hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors group"
-              >
-                <Github className="w-5 h-5 text-primary group-hover:text-primary-foreground" />
-                <div>
-                  <div className="font-mono text-sm font-bold uppercase tracking-wider">
-                    view my code
-                  </div>
-                  <div className="font-mono text-xs opacity-80">// explore github repos</div>
-                </div>
-              </button>
-
-              <div className="pt-4 border-t border-border">
-                <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-3">
-                  // open_to:
-                </div>
-                <div className="flex flex-wrap gap-1.5">
-                  {[
-                    "Full-Stack Development",
-                    "Web Applications",
-                    "Discord Bots",
-                    "E-commerce",
-                    "Problem Solving",
-                  ].map((spec) => (
-                    <span key={spec} className="term-chip">
-                      {spec}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

@@ -11,43 +11,35 @@ import FloatingElements from "@/components/FloatingElements";
 
 const Index = () => {
   return (
-    <div className="min-h-screen relative scanlines">
+    <div className="min-h-screen relative">
       <FloatingElements />
       <Navigation />
-      <main className="pt-14 relative z-10">
+      <main className="relative z-10">
         <Hero />
-        <div id="projects">
-          <Projects />
-        </div>
-        <div id="internships">
-          <Internships />
-        </div>
-        <div id="experience">
-          <Experience />
-        </div>
-        <div id="education">
-          <Education />
-        </div>
-        <div id="skills">
-          <Skills />
-        </div>
-        <div id="achievements">
-          <Achievements />
-        </div>
-        <div id="contact">
-          <Contact />
-        </div>
+        <div id="projects"><Projects /></div>
+        <div id="internships"><Internships /></div>
+        <div id="experience"><Experience /></div>
+        <div id="education"><Education /></div>
+        <div id="skills"><Skills /></div>
+        <div id="achievements"><Achievements /></div>
+        <div id="contact"><Contact /></div>
       </main>
 
-      <footer className="border-t border-border py-8 relative z-10">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="font-mono text-xs text-muted-foreground flex flex-col md:flex-row items-center justify-between gap-3">
-            <div>
-              <span className="text-primary">$</span> echo "© 2025 Manish Sambari. All rights reserved."
+      <footer className="relative z-10 px-4 pb-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="bento p-5 md:p-6 bg-card flex flex-col md:flex-row items-center justify-between gap-3">
+            <div className="flex items-center gap-3">
+              <span className="w-8 h-8 rounded-full pop-pink border-2 border-foreground flex items-center justify-center font-display font-bold">
+                M
+              </span>
+              <p className="font-semibold text-sm">
+                © 2025 Manish Sambari. Built with care.
+              </p>
             </div>
             <div className="flex items-center gap-2">
-              <span className="inline-block w-2 h-2 bg-primary" />
-              <span>built with react + tailwind</span>
+              <span className="sticker pop-yellow">React</span>
+              <span className="sticker pop-blue">Tailwind</span>
+              <span className="sticker pop-green">Vite</span>
             </div>
           </div>
         </div>
