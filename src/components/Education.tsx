@@ -3,10 +3,10 @@ import { GraduationCap, Award, ExternalLink } from "lucide-react";
 const Education = () => {
   const education = [
     {
-      degree: "B.E in Computer Engineering",
-      institution: "Terna Engineering College, Navi Mumbai",
+      degree: "B.E in Computer Science Engineering",
+      institution: "Terna Engineering College, Mumbai",
       grade: "CGPA: 7.20",
-      period: "May 2025",
+      period: "Dec 2021 – May 2025",
     },
     {
       degree: "Higher Secondary Certificate (HSC)",
@@ -23,6 +23,16 @@ const Education = () => {
   ];
 
   const certifications = [
+    {
+      name: "Full-Stack Development Cohort 2.0",
+      issuer: "Chai aur Code",
+      link: "#",
+    },
+    {
+      name: "Web Development Cohort 1.0",
+      issuer: "Sheryians Coding School",
+      link: "#",
+    },
     {
       name: "Web Development Cohort 2.0",
       issuer: "Harkirat Singh",

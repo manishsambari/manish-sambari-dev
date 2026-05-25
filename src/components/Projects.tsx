@@ -3,6 +3,16 @@ import { ExternalLink, Github, FolderGit2 } from "lucide-react";
 const Projects = () => {
   const projects = [
     {
+      title: "CourseShip",
+      tagline: "Full-Stack E-Learning Platform",
+      description:
+        "MERN-stack application featuring Stripe payment integration, Cloudinary media hosting, and secure user authentication using JWT tokens and Zod schema validation. Includes responsive UI, instructor dashboard, and a course management system supporting end-to-end content publishing and purchasing workflows.",
+      tech: ["MongoDB", "Express", "React", "Node.js", "Stripe", "Cloudinary", "JWT", "Zod"],
+      category: "Full-Stack",
+      github: "https://github.com/manishsambari/CourseShip",
+      live: "https://courseship.vercel.app",
+    },
+    {
       title: "FinSight",
       tagline: "AI Finance Platform For Automated Expense Tracking",
       description:

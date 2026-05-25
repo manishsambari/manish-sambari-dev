@@ -12,19 +12,19 @@ const Skills = () => {
       title: "Frameworks & Libraries",
       key: "frameworks",
       icon: <Wrench className="w-4 h-4" />,
-      skills: ["Node.js", "React.js", "Express.js", "Next.js", "TailwindCSS", "Gemini AI", "OpenAI"],
+      skills: ["Node.js", "React.js", "Express.js", "Next.js", "TailwindCSS", "Three.js", "Gemini AI", "OpenAI"],
     },
     {
       title: "Platforms & Tools",
       key: "tools",
       icon: <Cloud className="w-4 h-4" />,
-      skills: ["Canva", "Figma", "Shopify", "WordPress", "Power BI", "Tableau", "Clerk", "Metamask"],
+      skills: ["Canva", "Figma", "Shopify", "WordPress", "Power BI", "Tableau", "Clerk", "Metamask", "Vercel", "Render", "Postman"],
     },
     {
       title: "Databases & Cloud",
       key: "databases",
       icon: <Database className="w-4 h-4" />,
-      skills: ["MongoDB", "MySQL", "PostgreSQL", "Supabase", "AWS", "GCS", "Git/GitHub", "Hardhat"],
+      skills: ["MongoDB", "MySQL", "PostgreSQL", "Supabase", "Firebase", "AWS", "GCS", "Git/GitHub", "Hardhat"],
     },
     {
       title: "CS Fundamentals",

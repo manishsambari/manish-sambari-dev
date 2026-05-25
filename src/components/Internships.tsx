@@ -4,6 +4,20 @@ const Internships = () => {
   const internships = [
     {
       title: "Full Stack Developer Intern",
+      company: "KVAR Technologies Pvt. Ltd.",
+      period: "February 2026 – Present",
+      location: "Mumbai, India",
+      current: true,
+      bullets: [
+        "Developed and scaled a Production Monitoring System, implementing RBAC for 7+ user roles and improving system scalability, access management, and overall workflow efficiency.",
+        "Migrated a legacy EJS application to React.js and redesigned the backend into a modular architecture, achieving a 70% reduction in API latency through PostgreSQL query optimization and backend refactoring.",
+        "Architected LeadLens, a B2B lead automation platform integrating the IndiaMart API with a custom heuristic scoring engine, automated deduplication, and email sequencing to streamline the end-to-end sales funnel.",
+      ],
+      skills: ["React.js", "Node.js", "PostgreSQL", "RBAC", "EJS Migration", "B2B Automation", "API Design"],
+      certificateLink: "#",
+    },
+    {
+      title: "Full Stack Developer Intern",
       company: "NullClass",
       period: "June 2025 – November 2025",
       location: "Remote",
@@ -19,17 +33,18 @@ const Internships = () => {
     },
     {
       title: "Frontend Developer Intern",
-      company: "Dejorix",
+      company: "Dejorix Tech",
       period: "January 2025 – March 2025",
-      location: "Mumbai, Maharashtra",
+      location: "Mumbai, India",
       bullets: [
-        "Worked at a startup, building portfolio websites and client-facing frontend projects.",
+        "Built responsive user interfaces with React.js and Tailwind CSS, improving frontend load performance by 25% through efficient state management and component lazy loading.",
+        "Integrated Three.js 3D models into web environments, resulting in a 40% increase in user engagement while maintaining consistent 60 FPS performance benchmarks.",
         "Developed clean, responsive React.js interfaces with reusable components and smooth user interactions.",
         "Integrated REST APIs and optimized frontend performance for faster loading and better user experience.",
         "Collaborated with designers to refine layouts, maintain consistent UI/UX, and fix visual or functional issues.",
         "Implemented efficient state management and modular component structures to ensure scalable, maintainable frontend code.",
       ],
-      skills: ["React.js", "UI/UX", "REST APIs", "State Management", "Responsive Design"],
+      skills: ["React.js", "Tailwind CSS", "Three.js", "Lazy Loading", "REST APIs", "UI/UX"],
       certificateLink: "https://drive.google.com/file/d/1Mbk2yi2rA5J4VS4_TC1QiNbv7ENKmaLQ/view",
     },
     {
@@ -69,7 +84,13 @@ const Internships = () => {
             <div key={index} className="term-card">
               <div className="border-b border-border bg-secondary/30 px-4 py-2 flex items-center gap-2 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
                 <Terminal className="w-3.5 h-3.5 text-primary" />
-                <span>~/{internship.company.toLowerCase().replace(/\s+/g, "_")}.log</span>
+                <span>~/{internship.company.toLowerCase().replace(/[^a-z0-9]+/g, "_").replace(/^_+|_+$/g, "")}.log</span>
+                {internship.current && (
+                  <span className="inline-flex items-center gap-1.5 ml-2 px-2 py-0.5 border border-primary text-primary text-[9px]">
+                    <span className="w-1.5 h-1.5 bg-primary animate-pulse" />
+                    LIVE
+                  </span>
+                )}
                 <span className="ml-auto text-accent">#{String(index + 1).padStart(2, "0")}</span>
               </div>
 

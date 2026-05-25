@@ -69,9 +69,11 @@ const Hero = () => {
                   <span className="text-primary">$</span> cat about.md
                 </div>
                 <p className="font-mono text-sm md:text-base text-foreground/80 leading-relaxed max-w-2xl">
-                  Building modern web applications with the MERN stack, Next.js,
-                  and AI integrations. Comfortable across the stack — APIs &amp;
-                  auth on the backend, responsive React UIs on the frontend.
+                  Full-Stack Software Engineer building production-grade web
+                  applications across the JavaScript / TypeScript ecosystem.
+                  Specializes in React, Next.js, Node.js, and RESTful API design —
+                  with a track record of reducing API latency, improving frontend
+                  performance, and shipping scalable architectures.
                 </p>
 
                 {/* Meta line */}
