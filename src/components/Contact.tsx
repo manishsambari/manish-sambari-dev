@@ -13,7 +13,7 @@ const Contact = () => {
     { icon: <Github className="w-4 h-4" />, label: "GitHub", href: "https://github.com/manishsambari" },
     { icon: <Linkedin className="w-4 h-4" />, label: "LinkedIn", href: "https://linkedin.com/in/manishsambari" },
     { icon: <Instagram className="w-4 h-4" />, label: "Instagram", href: "https://instagram.com/manish.sambari" },
-    { icon: <MessageCircle className="w-4 h-4" />, label: "X", href: "https://x.com/manish_exe" },
+    { icon: <MessageCircle className="w-4 h-4" />, label: "X", href: "https://x.com/manish_sambari" },
   ];
 
   return (
