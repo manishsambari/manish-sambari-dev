@@ -1,172 +1,123 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Github } from "lucide-react";
-import { motion } from "framer-motion";
+import { ExternalLink, Github, FolderGit2 } from "lucide-react";
 
 const Projects = () => {
   const projects = [
     {
-      title: "FinSight - AI Finance Platform",
-      description: "Full-stack AI-powered finance platform for automated expense tracking and financial insights with Gemini AI integration for receipt scanning.",
-      tech: ["Next.js", "Tailwind", "Supabase", "Gemini AI", "Shadcn UI"],
+      title: "FinSight",
+      tagline: "AI Finance Platform For Automated Expense Tracking",
+      description:
+        "Full-stack AI-powered finance platform for automated expense tracking and real-time insights. Integrated Gemini AI for receipt scanning with accurate data extraction and smart categorization. Designed a modern, responsive UI using Shadcn, with secure data handling implemented through Prisma and Supabase.",
+      tech: ["Next.js", "TailwindCSS", "Supabase", "Gemini AI", "Shadcn UI", "Prisma"],
       category: "Full-Stack",
-      gradient: "from-emerald-500 to-teal-600",
       github: "https://github.com/manishsambari/FinSight",
-      live: "https://finsight-eight.vercel.app"
+      live: "https://finsight-eight.vercel.app",
     },
     {
-      title: "BrowseAndBuy - Book Marketplace",
-      description: "A web application that allows seniors to list their previous year books and materials for juniors to purchase. It also features real-time chatting to facilitate communication between buyers and sellers.",
-      tech: ["React.js", "Node.js", "MongoDB", "Socket.io", "Express.js"],
+      title: "BrowseAndBuy",
+      tagline: "Student Marketplace for Books & Study Materials",
+      description:
+        "A platform where seniors can list old textbooks and materials for juniors to buy. Real-time chat using Socket.io enables seamless communication between buyers and sellers, with a simple and intuitive user flow.",
+      tech: ["React.js", "Node.js", "Express.js", "MongoDB", "Socket.io"],
       category: "Full-Stack",
-      gradient: "from-orange-500 to-red-600",
       github: "https://github.com/manishsambari/BrowseAndBuy",
-      live: "https://browsenbuy.vercel.app/"
+      live: "https://browsenbuy.vercel.app/",
     },
     {
       title: "Discord Bot Ecosystem",
-      description: "Multipurpose Discord bot with 400+ commands for moderation, economy, and entertainment, featuring MongoDB and WebHook integration.",
-      tech: ["Node.js", "Discord.js", "MongoDB", "WebHook", "Express.js"],
+      tagline: "Multi-Purpose Automation & Moderation System",
+      description:
+        "Multi-purpose Discord bot with 400+ commands covering moderation, economy, utilities, and entertainment. Integrated MongoDB Atlas for persistent data storage and personalized server configurations. Improved an existing open-source project by enhancing performance, scalability, and user engagement.",
+      tech: ["Node.js", "Discord.js", "MongoDB", "WebHook", "Giphy", "OpenAI"],
       category: "Backend",
-      gradient: "from-indigo-500 to-blue-600",
-      github: "https://github.com/manishsambari/Discord-Bot-Own"
+      github: "https://github.com/manishsambari/Discord-Bot-Own",
     },
     {
       title: "Crowdfunding Marketplace",
-      description: "Decentralized crowdfunding platform enabling users to create campaigns and raise funds through Ethereum smart contracts.",
+      tagline: "Decentralized Fundraising on Ethereum",
+      description:
+        "Decentralized crowdfunding platform enabling users to create campaigns and raise funds through Ethereum smart contracts.",
       tech: ["React.js", "Solidity", "Hardhat", "Metamask"],
       category: "Web3",
-      gradient: "from-blue-500 to-purple-600",
-      github: "https://github.com/manishsambari/Crowdfunding"
-    }
+      github: "https://github.com/manishsambari/Crowdfunding",
+    },
   ];
 
   return (
     <section className="py-20 px-4">
       <div className="max-w-6xl mx-auto">
-        <motion.div 
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: -50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, type: "spring", bounce: 0.4 }}
-          viewport={{ once: true }}
-        >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            My <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">Projects</span>
+        <div className="mb-12">
+          <div className="font-mono text-xs uppercase tracking-widest text-muted-foreground mb-2">
+            <span className="text-primary">$</span> ls ./projects
+          </div>
+          <h2 className="font-mono text-3xl md:text-4xl font-bold">
+            <span className="text-primary">##</span> Projects
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            A collection of full-stack applications showcasing modern web development
+          <p className="font-mono text-sm text-muted-foreground mt-2 max-w-2xl">
+            // a collection of full-stack applications showcasing modern web development
           </p>
-        </motion.div>
-
-        <div className="grid md:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
-              whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
-              transition={{ 
-                delay: index * 0.2, 
-                duration: 0.8, 
-                type: "spring", 
-                bounce: 0.6 
-              }}
-              viewport={{ once: true }}
-              whileHover={{ 
-                scale: 1.05, 
-                rotate: 2,
-                transition: { type: "spring", stiffness: 400 }
-              }}
-            >
-              <Card className="glass-card group hover:shadow-2xl transition-all duration-300 h-full">
-                <CardHeader className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <motion.div
-                      animate={{ 
-                        scale: [1, 1.1, 1],
-                        rotate: [0, 5, -5, 0]
-                      }}
-                      transition={{ 
-                        duration: 2, 
-                        repeat: Infinity,
-                        delay: index * 0.5
-                      }}
-                    >
-                      <Badge variant="secondary" className="w-fit">
-                        {project.category}
-                      </Badge>
-                    </motion.div>
-                    <div className="flex gap-2">
-                      <motion.div whileHover={{ scale: 1.2, rotate: 360 }} transition={{ duration: 0.3 }}>
-                        <Button 
-                          size="sm" 
-                          variant="ghost" 
-                          className="p-2"
-                          onClick={() => window.open(project.github, '_blank')}
-                        >
-                          <Github className="w-4 h-4" />
-                        </Button>
-                      </motion.div>
-                      {project.live && (
-                        <motion.div whileHover={{ scale: 1.2, rotate: 360 }} transition={{ duration: 0.3 }}>
-                          <Button 
-                            size="sm" 
-                            variant="ghost" 
-                            className="p-2"
-                            onClick={() => window.open(project.live, '_blank')}
-                          >
-                            <ExternalLink className="w-4 h-4" />
-                          </Button>
-                        </motion.div>
-                      )}
-                    </div>
-                  </div>
-                  
-                  <motion.div 
-                    className={`h-2 rounded-full bg-gradient-to-r ${project.gradient} opacity-60`}
-                    initial={{ width: 0 }}
-                    whileInView={{ width: "100%" }}
-                    transition={{ delay: 0.5 + index * 0.1, duration: 1 }}
-                    viewport={{ once: true }}
-                  />
-                  
-                  <CardTitle className="text-xl group-hover:text-primary transition-colors">
-                    {project.title}
-                  </CardTitle>
-                </CardHeader>
-                
-                <CardContent className="space-y-4">
-                  <CardDescription className="text-base leading-relaxed">
-                    {project.description}
-                  </CardDescription>
-                  
-                  <div className="flex flex-wrap gap-2">
-                    {project.tech.map((tech, techIndex) => (
-                      <motion.div
-                        key={tech}
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 1 + techIndex * 0.1 }}
-                        viewport={{ once: true }}
-                        whileHover={{ scale: 1.1, y: -2 }}
-                      >
-                        <Badge variant="outline" className="text-xs hover:bg-primary/10">
-                          {tech}
-                        </Badge>
-                      </motion.div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
         </div>
 
-        <div className="text-center mt-12">
-          <Button variant="outline" size="lg" className="px-8">
-            View All Projects
-          </Button>
+        <div className="grid md:grid-cols-2 gap-6">
+          {projects.map((project, index) => (
+            <div key={index} className="term-card flex flex-col">
+              {/* Card terminal header */}
+              <div className="border-b border-border bg-secondary/30 px-4 py-2 flex items-center justify-between">
+                <div className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
+                  <FolderGit2 className="w-3.5 h-3.5 text-primary" />
+                  <span>./{project.title.toLowerCase().replace(/\s+/g, "-")}</span>
+                </div>
+                <span className="font-mono text-[10px] uppercase tracking-widest text-accent">
+                  [{project.category}]
+                </span>
+              </div>
+
+              <div className="p-5 flex-1 flex flex-col gap-4">
+                <div>
+                  <h3 className="font-mono text-xl font-bold text-foreground">
+                    {project.title}
+                  </h3>
+                  <p className="font-mono text-xs text-primary mt-1">
+                    → {project.tagline}
+                  </p>
+                </div>
+
+                <p className="font-mono text-sm text-foreground/75 leading-relaxed">
+                  {project.description}
+                </p>
+
+                <div className="flex flex-wrap gap-1.5">
+                  {project.tech.map((t) => (
+                    <span key={t} className="term-chip">
+                      {t}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="flex gap-2 mt-auto pt-2 border-t border-border">
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 px-3 py-1.5 text-xs font-mono uppercase tracking-wider border border-border text-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors"
+                  >
+                    <Github className="w-3.5 h-3.5" />
+                    source
+                  </a>
+                  {project.live && (
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-2 px-3 py-1.5 text-xs font-mono uppercase tracking-wider border border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
+                    >
+                      <ExternalLink className="w-3.5 h-3.5" />
+                      live demo
+                    </a>
+                  )}
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

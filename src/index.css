@@ -2,116 +2,60 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/*
+  BRUTALIST / TERMINAL THEME
+  - Pure black canvas, hard 1px borders, no soft shadows, no gradients.
+  - Lime (#A3E635) as primary accent, amber (#FBBF24) as secondary highlight.
+  - Monospace everywhere. Cursor blink. Scanline ambient overlay.
 */
 
 @layer base {
   :root {
     --background: 0 0% 4%;
-    --foreground: 0 0% 98%;
+    --foreground: 0 0% 96%;
 
     --card: 0 0% 6%;
-    --card-foreground: 0 0% 98%;
+    --card-foreground: 0 0% 96%;
 
     --popover: 0 0% 6%;
-    --popover-foreground: 0 0% 98%;
+    --popover-foreground: 0 0% 96%;
 
-    --primary: 197 100% 65%;
+    --primary: 84 81% 56%;            /* lime-400 */
     --primary-foreground: 0 0% 4%;
 
-    --secondary: 0 0% 8%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 96%;
 
-    --muted: 0 0% 8%;
-    --muted-foreground: 0 0% 65%;
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 0% 60%;
 
-    --accent: 197 100% 65%;
+    --accent: 45 96% 56%;             /* amber-400 */
     --accent-foreground: 0 0% 4%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 15%;
-    --input: 0 0% 8%;
-    --ring: 197 100% 65%;
+    --border: 0 0% 22%;
+    --input: 0 0% 10%;
+    --ring: 84 81% 56%;
 
-    --radius: 0.75rem;
+    --radius: 0rem;                   /* NO rounding — brutalist */
 
-    /* Custom design tokens - Dark theme with blue accent */
-    --blue-accent: 197 100% 65%;
-    --green-accent: 142 71% 45%;
-    --orange-accent: 25 95% 53%;
-    
-    --gradient-primary: linear-gradient(135deg, hsl(197 100% 65%), hsl(0 0% 8%));
-    --gradient-hero: linear-gradient(135deg, hsl(0 0% 4%) 0%, hsl(0 0% 6%) 50%, hsl(0 0% 8%) 100%);
-    --gradient-card: linear-gradient(135deg, hsl(0 0% 6%), hsl(0 0% 8%));
-    --gradient-accent: linear-gradient(90deg, hsl(197 100% 65%), hsl(0 0% 15%));
-    --gradient-subtle: linear-gradient(135deg, hsl(0 0% 4%), hsl(0 0% 6%));
-    
-    --shadow-subtle: 0 2px 10px hsl(0 0% 0% / 0.1);
-    --shadow-card: 0 4px 20px hsl(0 0% 0% / 0.1);
-    --shadow-hover: 0 8px 30px hsl(0 0% 0% / 0.15);
-    --shadow-focus: 0 0 0 3px hsl(142 71% 45% / 0.2);
+    --term-lime: 84 81% 56%;
+    --term-amber: 45 96% 56%;
+    --term-cyan: 188 95% 55%;
+    --term-magenta: 320 85% 60%;
+    --term-red: 0 84% 60%;
+    --term-dim: 0 0% 45%;
 
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    --transition-elastic: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    --bounce-in: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 15 23% 5%;
-    --foreground: 0 0% 98%;
-
-    --card: 20 14% 8%;
-    --card-foreground: 0 0% 98%;
-
-    --popover: 20 14% 8%;
-    --popover-foreground: 0 0% 98%;
-
-    --primary: 162 88% 65%;
-    --primary-foreground: 15 23% 5%;
-
-    --secondary: 20 14% 12%;
-    --secondary-foreground: 0 0% 98%;
-
-    --muted: 20 14% 12%;
-    --muted-foreground: 240 5% 65%;
-
-    --accent: 162 88% 65%;
-    --accent-foreground: 15 23% 5%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 20 14% 15%;
-    --input: 20 14% 12%;
-    --ring: 162 88% 65%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 162 88% 65%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 162 88% 65%;
+    --sidebar-background: 0 0% 4%;
+    --sidebar-foreground: 0 0% 96%;
+    --sidebar-primary: 84 81% 56%;
+    --sidebar-primary-foreground: 0 0% 4%;
+    --sidebar-accent: 0 0% 10%;
+    --sidebar-accent-foreground: 0 0% 96%;
+    --sidebar-border: 0 0% 22%;
+    --sidebar-ring: 84 81% 56%;
   }
 }
 
@@ -120,102 +64,188 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    font-family: 'JetBrains Mono', 'Space Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+
   body {
     @apply bg-background text-foreground antialiased;
-    background: hsl(var(--background));
     min-height: 100vh;
+    font-feature-settings: "ss01", "ss02", "calt", "liga";
   }
 
-  .glass-card {
-    background: var(--gradient-card);
-    backdrop-filter: blur(16px);
-    border: 1px solid hsl(var(--border));
-    transition: var(--transition-elastic);
-    box-shadow: 0 8px 32px hsl(var(--primary) / 0.1);
-  }
-
-  .glass-card:hover {
-    box-shadow: var(--shadow-hover);
-    transform: translateY(-4px) scale(1.02);
-    border-color: hsl(var(--primary) / 0.3);
-  }
-
-  .glow-effect {
-    box-shadow: var(--shadow-glow);
-  }
-
-  .mint-glow {
-    box-shadow: var(--shadow-mint);
-  }
-
-  .gradient-text {
-    background: var(--gradient-accent);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .mint-gradient {
-    background: var(--gradient-mint);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  ::selection {
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
   }
 }
 
-/* Animation utilities */
-.animate-float {
-  animation: float 3s ease-in-out infinite;
+@layer components {
+  /* Hard-bordered terminal card */
+  .term-card {
+    @apply bg-card border border-border;
+    position: relative;
+    transition: border-color 120ms linear, transform 120ms linear, box-shadow 120ms linear;
+  }
+  .term-card:hover {
+    border-color: hsl(var(--primary));
+    box-shadow: 4px 4px 0 0 hsl(var(--primary));
+    transform: translate(-2px, -2px);
+  }
+
+  /* Terminal window header with traffic-light dots */
+  .term-window {
+    @apply border border-border bg-card;
+  }
+  .term-window-header {
+    @apply border-b border-border bg-secondary/40 px-4 py-2 flex items-center gap-2;
+  }
+  .term-dot {
+    @apply inline-block w-3 h-3 border border-border;
+  }
+
+  /* Sharp text accent */
+  .term-prompt::before {
+    content: "$ ";
+    color: hsl(var(--primary));
+    font-weight: 600;
+  }
+
+  .term-arrow::before {
+    content: "→ ";
+    color: hsl(var(--primary));
+  }
+
+  .term-bullet::before {
+    content: "▸ ";
+    color: hsl(var(--accent));
+  }
+
+  /* Brutalist button — flat, hard, with offset hover */
+  .btn-brutal {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-3 text-sm font-semibold uppercase tracking-wider border border-border bg-card text-foreground;
+    transition: transform 120ms linear, box-shadow 120ms linear, background-color 120ms linear, color 120ms linear;
+  }
+  .btn-brutal:hover {
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    border-color: hsl(var(--primary));
+    transform: translate(-3px, -3px);
+    box-shadow: 6px 6px 0 0 hsl(var(--foreground));
+  }
+  .btn-brutal:active {
+    transform: translate(0, 0);
+    box-shadow: 0 0 0 0 hsl(var(--foreground));
+  }
+  .btn-brutal-accent {
+    @apply bg-primary text-primary-foreground border-primary;
+  }
+  .btn-brutal-accent:hover {
+    background: hsl(var(--accent));
+    color: hsl(var(--accent-foreground));
+    border-color: hsl(var(--accent));
+    box-shadow: 6px 6px 0 0 hsl(var(--primary));
+  }
+
+  /* Section heading with leading "##" */
+  .section-heading {
+    @apply font-mono uppercase tracking-widest text-foreground;
+  }
+  .section-heading-prefix {
+    color: hsl(var(--primary));
+    margin-right: 0.5rem;
+  }
+
+  /* ASCII divider */
+  .ascii-divider {
+    color: hsl(var(--border));
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+    overflow: hidden;
+    user-select: none;
+  }
+
+  /* Tag chip */
+  .term-chip {
+    @apply inline-flex items-center px-2 py-0.5 text-xs font-mono uppercase tracking-wider border border-border bg-secondary/40 text-muted-foreground;
+    transition: all 120ms linear;
+  }
+  .term-chip:hover {
+    border-color: hsl(var(--primary));
+    color: hsl(var(--primary));
+    background: hsl(var(--primary) / 0.08);
+  }
+
+  /* Status pill */
+  .status-pill {
+    @apply inline-flex items-center gap-2 px-3 py-1 text-xs font-mono uppercase tracking-wider border border-primary bg-primary/10 text-primary;
+  }
+  .status-pill::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    background: hsl(var(--primary));
+    box-shadow: 0 0 6px hsl(var(--primary));
+    animation: blink 1.2s steps(2, end) infinite;
+  }
 }
 
+/* Cursor blink */
+.cursor-blink::after {
+  content: "▊";
+  color: hsl(var(--primary));
+  margin-left: 2px;
+  animation: blink 1s steps(2, start) infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Subtle scanline overlay (CRT vibe, very mild) */
+.scanlines::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.02) 0,
+    rgba(255, 255, 255, 0.02) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  z-index: 1;
+}
+
+/* Grid background */
+.grid-bg {
+  background-image:
+    linear-gradient(hsl(var(--border) / 0.4) 1px, transparent 1px),
+    linear-gradient(90deg, hsl(var(--border) / 0.4) 1px, transparent 1px);
+  background-size: 48px 48px;
+  background-position: -1px -1px;
+}
+
+/* Animation utilities (kept minimal — terminal style is mostly static) */
 .animate-fade-in {
-  animation: fade-in 0.8s ease-out forwards;
+  animation: fade-in 0.5s ease-out forwards;
   opacity: 0;
 }
 
 .animate-slide-up {
-  animation: slide-up 0.8s ease-out forwards;
+  animation: slide-up 0.5s ease-out forwards;
   opacity: 0;
-  transform: translateY(30px);
-}
-
-.animate-bounce-in {
-  animation: bounce-in 0.6s var(--bounce-in) forwards;
-  opacity: 0;
-  transform: scale(0.3);
-}
-
-.animate-pulse-glow {
-  animation: pulse-glow 2s ease-in-out infinite;
-}
-
-.animate-rotate {
-  animation: rotate 3s linear infinite;
-}
-
-.animate-wiggle {
-  animation: wiggle 1s ease-in-out infinite;
-}
-
-.animate-gradient {
-  animation: gradient-shift 3s ease infinite;
+  transform: translateY(16px);
 }
 
 .animate-typewriter {
-  animation: typewriter 3s steps(30, end), blink 0.75s step-end infinite;
-}
-
-.animate-particle {
-  animation: particle-float 4s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid hsl(var(--primary));
+  animation: typewriter 2.2s steps(40, end) forwards, blink 1s step-end infinite;
 }
 
 @keyframes fade-in {
@@ -232,157 +262,50 @@ All colors MUST be HSL.
   }
 }
 
-@keyframes bounce-in {
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes pulse-glow {
-  0%, 100% {
-    box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
-  }
-  50% {
-    box-shadow: 0 0 40px hsl(var(--primary) / 0.6);
-  }
-}
-
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes wiggle {
-  0%, 100% {
-    transform: rotate(-3deg);
-  }
-  50% {
-    transform: rotate(3deg);
-  }
-}
-
-@keyframes gradient-shift {
-  0%, 100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-}
-
 @keyframes typewriter {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
+  from { width: 0; }
+  to { width: 100%; }
 }
 
-@keyframes blink {
-  from, to {
-    border-color: transparent;
-  }
-  50% {
-    border-color: hsl(var(--primary));
-  }
+/* Boot-up flicker */
+.flicker {
+  animation: flicker 4s infinite;
 }
 
-@keyframes particle-float {
-  0%, 100% {
-    transform: translate(0, 0) rotate(0deg);
+@keyframes flicker {
+  0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+    opacity: 1;
   }
-  25% {
-    transform: translate(10px, -10px) rotate(90deg);
-  }
-  50% {
-    transform: translate(-5px, -20px) rotate(180deg);
-  }
-  75% {
-    transform: translate(-10px, -5px) rotate(270deg);
+  20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+    opacity: 0.85;
   }
 }
 
-/* Additional Modern Animations */
-.animate-scale-in {
-  animation: scale-in 0.4s var(--transition-elastic) forwards;
-  opacity: 0;
-  transform: scale(0.9);
+/* Legacy class shims so existing usage still renders cleanly until migrated */
+.glass-card {
+  @apply term-card;
 }
-
-.animate-slide-in-left {
-  animation: slide-in-left 0.6s var(--transition-elastic) forwards;
-  opacity: 0;
-  transform: translateX(-30px);
+.gradient-text {
+  color: hsl(var(--primary));
 }
-
-.animate-slide-in-right {
-  animation: slide-in-right 0.6s var(--transition-elastic) forwards;
-  opacity: 0;
-  transform: translateX(30px);
+.mint-gradient {
+  color: hsl(var(--accent));
 }
-
-.animate-mint-pulse {
-  animation: mint-pulse 2s ease-in-out infinite;
+.mint-glow {
+  box-shadow: none;
 }
-
-.animate-floating {
-  animation: floating 6s ease-in-out infinite;
-}
-
+.animate-float,
+.animate-bounce-in,
+.animate-pulse-glow,
+.animate-rotate,
+.animate-wiggle,
+.animate-gradient,
+.animate-particle,
+.animate-scale-in,
+.animate-slide-in-left,
+.animate-slide-in-right,
+.animate-mint-pulse,
+.animate-floating,
 .animate-gentle-bounce {
-  animation: gentle-bounce 2s ease-in-out infinite;
-}
-
-@keyframes scale-in {
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes slide-in-left {
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes slide-in-right {
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes mint-pulse {
-  0%, 100% {
-    box-shadow: 0 0 20px hsl(120 100% 35% / 0.4);
-  }
-  50% {
-    box-shadow: 0 0 40px hsl(120 100% 35% / 0.8);
-  }
-}
-
-@keyframes floating {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-15px);
-  }
-}
-
-@keyframes gentle-bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-8px);
-  }
+  animation: none;
 }

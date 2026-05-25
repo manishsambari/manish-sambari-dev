@@ -1,9 +1,4 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { GraduationCap, Award, ExternalLink } from "lucide-react";
-import { motion } from "framer-motion";
 
 const Education = () => {
   const education = [
@@ -11,183 +6,139 @@ const Education = () => {
       degree: "B.E in Computer Engineering",
       institution: "Terna Engineering College, Navi Mumbai",
       grade: "CGPA: 7.20",
-      period: "Expected: May 2025",
-      gradient: "from-blue-500 to-purple-600"
+      period: "May 2025",
     },
     {
       degree: "Higher Secondary Certificate (HSC)",
       institution: "B. N. N. College, Bhiwandi",
       grade: "Percentage: 89.50%",
       period: "May 2021",
-      gradient: "from-green-500 to-emerald-600"
     },
     {
       degree: "Secondary School Certificate (SSC)",
       institution: "Vikas English Medium School, Bhiwandi",
       grade: "Percentage: 82.20%",
       period: "March 2019",
-      gradient: "from-orange-500 to-red-600"
-    }
+    },
   ];
 
   const certifications = [
     {
       name: "Web Development Cohort 2.0",
       issuer: "Harkirat Singh",
-      link: "#"
+      link: "#",
     },
     {
       name: "Full Stack Python Developer",
       issuer: "Kamal Classes",
-      link: "https://drive.google.com/file/d/131Q1F9nOtBv9HfpUTwkjO3YU726Kre-U/view"
+      link: "https://drive.google.com/file/d/131Q1F9nOtBv9HfpUTwkjO3YU726Kre-U/view",
     },
     {
       name: "Oracle Cloud Infrastructure 2025 Foundations Associate",
       issuer: "Oracle",
-      link: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=8C5314EEDCE53749057B5132C2B4F75F967C7B8BE3817A1EBC5E7CFFE50E33AB"
-    }
+      link: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=8C5314EEDCE53749057B5132C2B4F75F967C7B8BE3817A1EBC5E7CFFE50E33AB",
+    },
   ];
 
   return (
     <section className="py-20 px-4">
-      <div className="max-w-4xl mx-auto">
-        <motion.div 
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Education & <span className="bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent">Certifications</span>
+      <div className="max-w-5xl mx-auto">
+        <div className="mb-12">
+          <div className="font-mono text-xs uppercase tracking-widest text-muted-foreground mb-2">
+            <span className="text-primary">$</span> cat education.json
+          </div>
+          <h2 className="font-mono text-3xl md:text-4xl font-bold">
+            <span className="text-primary">##</span> Education &amp; Certifications
           </h2>
-          <p className="text-xl text-muted-foreground">
-            Academic foundation and professional achievements
+          <p className="font-mono text-sm text-muted-foreground mt-2">
+            // academic foundation &amp; professional credentials
           </p>
-        </motion.div>
+        </div>
 
-        {/* Education Section */}
-        <motion.div 
-          className="mb-16"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <h3 className="text-2xl font-bold mb-8 text-center">
-            <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Academic Background</span>
+        {/* Education */}
+        <div className="mb-12">
+          <h3 className="font-mono text-lg uppercase tracking-widest text-accent mb-5">
+            // academic_background
           </h3>
-          
-          <div className="space-y-4">
+          <div className="space-y-3">
             {education.map((edu, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: index * 0.2, duration: 0.8 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.02, y: -5 }}
-              >
-                <Card className="glass-card hover:shadow-2xl transition-all duration-300">
-                  <CardHeader>
-                    <div className="flex items-start justify-between">
-                      <div className="space-y-2">
-                        <CardTitle className="text-xl flex items-center gap-2">
-                          <motion.div
-                            animate={{ rotate: [0, 10, -10, 0] }}
-                            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                          >
-                            <GraduationCap className="w-5 h-5 text-primary" />
-                          </motion.div>
-                          {edu.degree}
-                        </CardTitle>
-                        <div className="text-muted-foreground">
-                          <p className="font-medium text-foreground">{edu.institution}</p>
-                          <div className="flex flex-wrap gap-4 text-sm mt-1">
-                            <span>{edu.grade}</span>
-                            <span>•</span>
-                            <span>{edu.period}</span>
-                          </div>
-                        </div>
+              <div key={index} className="term-card p-5">
+                <div className="flex items-start gap-4">
+                  <div className="border border-border p-2 bg-secondary/40">
+                    <GraduationCap className="w-5 h-5 text-primary" />
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2">
+                      <div>
+                        <h4 className="font-mono font-bold text-foreground">{edu.degree}</h4>
+                        <p className="font-mono text-sm text-primary mt-0.5">
+                          {edu.institution}
+                        </p>
                       </div>
+                      <span className="font-mono text-xs uppercase tracking-widest text-muted-foreground border border-border px-2 py-1 self-start">
+                        {edu.period}
+                      </span>
                     </div>
-                    
-                    <motion.div 
-                      className={`h-2 rounded-full bg-gradient-to-r ${edu.gradient} opacity-60`}
-                      initial={{ width: 0 }}
-                      whileInView={{ width: "100%" }}
-                      transition={{ delay: 0.5, duration: 1 }}
-                      viewport={{ once: true }}
-                    />
-                  </CardHeader>
-                </Card>
-              </motion.div>
+                    <div className="font-mono text-sm text-accent mt-2">
+                      → {edu.grade}
+                    </div>
+                  </div>
+                </div>
+              </div>
             ))}
           </div>
-        </motion.div>
+        </div>
 
-        {/* Certifications Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <h3 className="text-2xl font-bold mb-8 text-center">
-            <span className="bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent">Professional Certifications</span>
+        {/* Certifications */}
+        <div>
+          <h3 className="font-mono text-lg uppercase tracking-widest text-accent mb-5">
+            // certifications
           </h3>
-          
-          <Card className="glass-card">
-            <CardContent className="p-0">
-              <Table>
-                <TableHeader>
-                  <TableRow className="border-border/50">
-                    <TableHead className="font-semibold text-foreground">
-                      <div className="flex items-center gap-2">
-                        <Award className="w-4 h-4 text-primary" />
-                        Certification
-                      </div>
-                    </TableHead>
-                    <TableHead className="font-semibold text-foreground">Issuing Organization</TableHead>
-                    <TableHead className="text-center font-semibold text-foreground">Action</TableHead>
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  {certifications.map((cert, index) => (
-                    <motion.tr
-                      key={index}
-                      className="border-border/30 hover:bg-muted/50 transition-colors"
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ delay: index * 0.1, duration: 0.5 }}
-                      viewport={{ once: true }}
+          <div className="term-card">
+            <div className="grid grid-cols-12 gap-px bg-border border-b border-border">
+              <div className="col-span-7 md:col-span-7 bg-secondary/40 px-4 py-3 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
+                Certification
+              </div>
+              <div className="col-span-3 md:col-span-3 bg-secondary/40 px-4 py-3 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
+                Issuer
+              </div>
+              <div className="col-span-2 md:col-span-2 bg-secondary/40 px-4 py-3 font-mono text-[10px] uppercase tracking-widest text-muted-foreground text-right">
+                Action
+              </div>
+            </div>
+            {certifications.map((c, index) => (
+              <div
+                key={index}
+                className="grid grid-cols-12 gap-px bg-border border-b border-border last:border-0 hover:bg-secondary/20"
+              >
+                <div className="col-span-7 md:col-span-7 bg-card px-4 py-3 font-mono text-sm text-foreground flex items-center gap-2">
+                  <Award className="w-3.5 h-3.5 text-primary shrink-0" />
+                  {c.name}
+                </div>
+                <div className="col-span-3 md:col-span-3 bg-card px-4 py-3 font-mono text-sm text-muted-foreground">
+                  {c.issuer}
+                </div>
+                <div className="col-span-2 md:col-span-2 bg-card px-4 py-3 text-right">
+                  {c.link !== "#" ? (
+                    <a
+                      href={c.link}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-1.5 px-2 py-1 text-[10px] font-mono uppercase tracking-widest border border-border text-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors"
                     >
-                      <TableCell className="font-medium">{cert.name}</TableCell>
-                      <TableCell className="text-muted-foreground">{cert.issuer}</TableCell>
-                      <TableCell className="text-center">
-                        <motion.div
-                          whileHover={{ scale: 1.05 }}
-                          whileTap={{ scale: 0.95 }}
-                        >
-                          <Button 
-                            size="sm" 
-                            variant="outline"
-                            className="hover:bg-primary/10"
-                            onClick={() => cert.link !== "#" && window.open(cert.link, '_blank')}
-                            disabled={cert.link === "#"}
-                          >
-                            <ExternalLink className="w-3 h-3 mr-1" />
-                            View
-                          </Button>
-                        </motion.div>
-                      </TableCell>
-                    </motion.tr>
-                  ))}
-                </TableBody>
-              </Table>
-            </CardContent>
-          </Card>
-        </motion.div>
+                      <ExternalLink className="w-3 h-3" />
+                      view
+                    </a>
+                  ) : (
+                    <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
+                      —
+                    </span>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

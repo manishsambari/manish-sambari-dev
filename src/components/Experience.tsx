@@ -1,7 +1,4 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Briefcase, Calendar, MapPin } from "lucide-react";
-import { motion } from "framer-motion";
+import { Calendar, MapPin, Briefcase } from "lucide-react";
 
 const Experience = () => {
   const experiences = [
@@ -13,7 +10,6 @@ const Experience = () => {
       type: "Contract",
       description: "Built and customized a Shopify jewelry e-commerce site for client.",
       skills: ["Shopify", "E-commerce", "Payment Integration", "UI/UX"],
-      gradient: "from-green-500 to-emerald-600"
     },
     {
       title: "Digital Asset Transaction Coordinator",
@@ -21,9 +17,9 @@ const Experience = () => {
       period: "2024 – 2025",
       location: "Remote",
       type: "Contract",
-      description: "Facilitated secure peer-to-peer cryptocurrency transactions and handled exchange rate checks.",
+      description:
+        "Facilitated secure peer-to-peer cryptocurrency transactions and handled exchange rate checks.",
       skills: ["Cryptocurrency", "P2P Trading", "Risk Management", "Market Analysis"],
-      gradient: "from-orange-500 to-red-600"
     },
     {
       title: "Discord Moderator & Bot Developer",
@@ -31,116 +27,76 @@ const Experience = () => {
       period: "2023 – 2024",
       location: "Remote",
       type: "Freelance",
-      description: "Managed large Discord communities and handled rule enforcement and conflict resolution. Built custom automation and moderation bots with API integration.",
+      description:
+        "Managed large Discord communities and handled rule enforcement and conflict resolution. Built custom automation and moderation bots with API integration.",
       skills: ["Node.js", "Discord.js", "API Integration", "Community Management"],
-      gradient: "from-blue-500 to-purple-600"
-    }
+    },
   ];
-
-  const getTypeColor = (type: string) => {
-    switch (type) {
-      case "Internship":
-        return "bg-blue-500/10 text-blue-400 border-blue-500/20";
-      case "Freelance":
-        return "bg-green-500/10 text-green-400 border-green-500/20";
-      case "Contract":
-        return "bg-purple-500/10 text-purple-400 border-purple-500/20";
-      default:
-        return "bg-gray-500/10 text-gray-400 border-gray-500/20";
-    }
-  };
 
   return (
     <section className="py-20 px-4">
-      <div className="max-w-4xl mx-auto">
-        <motion.div 
-          className="text-center mb-16"
-          initial={{ opacity: 0, rotateX: -90 }}
-          whileInView={{ opacity: 1, rotateX: 0 }}
-          transition={{ duration: 1, type: "spring", stiffness: 100 }}
-          viewport={{ once: true }}
-        >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Additional <span className="bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">Experience</span>
+      <div className="max-w-5xl mx-auto">
+        <div className="mb-12">
+          <div className="font-mono text-xs uppercase tracking-widest text-muted-foreground mb-2">
+            <span className="text-primary">$</span> grep -i "freelance" experience.txt
+          </div>
+          <h2 className="font-mono text-3xl md:text-4xl font-bold">
+            <span className="text-primary">##</span> Additional Experience
           </h2>
-          <p className="text-xl text-muted-foreground">
-            Building expertise through diverse projects and collaborations
+          <p className="font-mono text-sm text-muted-foreground mt-2">
+            // freelance gigs &amp; side ventures
           </p>
-        </motion.div>
+        </div>
 
-        <div className="space-y-6">
+        {/* Timeline */}
+        <div className="relative pl-6 md:pl-10 border-l border-border">
           {experiences.map((exp, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, rotateY: index % 2 === 0 ? -180 : 180, scale: 0.5 }}
-              whileInView={{ opacity: 1, rotateY: 0, scale: 1 }}
-              transition={{ delay: index * 0.3, duration: 1, type: "spring" }}
-              viewport={{ once: true }}
-              whileHover={{ scale: 1.05, rotateX: 5, y: -10 }}
-            >
-              <Card className="glass-card group hover:shadow-2xl transition-all duration-300">
-                <CardHeader>
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                    <div className="space-y-2">
-                      <CardTitle className="text-xl flex items-center gap-2">
-                        <motion.div
-                          animate={{ rotate: 360 }}
-                          transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-                        >
-                          <Briefcase className="w-5 h-5 text-primary" />
-                        </motion.div>
-                        {exp.title}
-                      </CardTitle>
-                      <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
-                        <span className="font-medium text-foreground">{exp.company}</span>
-                        <div className="flex items-center gap-1">
-                          <Calendar className="w-4 h-4" />
-                          {exp.period}
-                        </div>
-                        <div className="flex items-center gap-1">
-                          <MapPin className="w-4 h-4" />
-                          {exp.location}
-                        </div>
-                      </div>
+            <div key={index} className="relative pb-8 last:pb-0">
+              <div className="absolute -left-[27px] md:-left-[43px] top-1 w-4 h-4 border border-primary bg-background flex items-center justify-center">
+                <span className="block w-1.5 h-1.5 bg-primary" />
+              </div>
+
+              <div className="term-card">
+                <div className="border-b border-border bg-secondary/30 px-4 py-2 flex items-center justify-between font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
+                  <span className="inline-flex items-center gap-2">
+                    <Briefcase className="w-3.5 h-3.5 text-primary" />
+                    [{exp.type}]
+                  </span>
+                  <span className="text-accent">{exp.period}</span>
+                </div>
+
+                <div className="p-5 space-y-3">
+                  <div>
+                    <h3 className="font-mono text-lg font-bold text-foreground">{exp.title}</h3>
+                    <div className="font-mono text-sm text-primary mt-0.5">
+                      @ {exp.company}
                     </div>
-                    <Badge className={getTypeColor(exp.type)}>
-                      {exp.type}
-                    </Badge>
+                    <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mt-2 text-xs font-mono text-muted-foreground">
+                      <span className="inline-flex items-center gap-1.5">
+                        <Calendar className="w-3.5 h-3.5 text-primary" />
+                        {exp.period}
+                      </span>
+                      <span className="inline-flex items-center gap-1.5">
+                        <MapPin className="w-3.5 h-3.5 text-primary" />
+                        {exp.location}
+                      </span>
+                    </div>
                   </div>
-                  
-                  <motion.div 
-                    className={`h-2 rounded-full bg-gradient-to-r ${exp.gradient} opacity-60`}
-                    initial={{ width: 0 }}
-                    whileInView={{ width: "100%" }}
-                    transition={{ delay: 0.5, duration: 1 }}
-                    viewport={{ once: true }}
-                  />
-                </CardHeader>
-                
-                <CardContent className="space-y-4">
-                  <p className="text-muted-foreground leading-relaxed">
+
+                  <p className="font-mono text-sm text-foreground/80 leading-relaxed">
                     {exp.description}
                   </p>
-                  
-                  <div className="flex flex-wrap gap-2">
-                    {exp.skills.map((skill, skillIndex) => (
-                      <motion.div
-                        key={skill}
-                        initial={{ opacity: 0, scale: 0 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: 0.8 + skillIndex * 0.1 }}
-                        viewport={{ once: true }}
-                        whileHover={{ scale: 1.1 }}
-                      >
-                        <Badge variant="outline" className="text-xs hover:bg-primary/10">
-                          {skill}
-                        </Badge>
-                      </motion.div>
+
+                  <div className="flex flex-wrap gap-1.5 pt-2 border-t border-border">
+                    {exp.skills.map((s) => (
+                      <span key={s} className="term-chip">
+                        {s}
+                      </span>
                     ))}
                   </div>
-                </CardContent>
-              </Card>
-            </motion.div>
+                </div>
+              </div>
+            </div>
           ))}
         </div>
       </div>

@@ -1,218 +1,174 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Mail, Phone, MapPin, Github, Linkedin, Send, MessageCircle, Instagram } from "lucide-react";
-import { motion } from "framer-motion";
+import { Mail, Phone, MapPin, Github, Linkedin, MessageCircle, Instagram, Send } from "lucide-react";
 
 const Contact = () => {
   const contactInfo = [
     {
-      icon: <Mail className="w-5 h-5" />,
-      label: "Email",
+      icon: <Mail className="w-4 h-4" />,
+      label: "email",
       value: "sambarimanish@gmail.com",
-      href: "mailto:sambarimanish@gmail.com"
+      href: "mailto:sambarimanish@gmail.com",
     },
     {
-      icon: <Phone className="w-5 h-5" />,
-      label: "Phone",
+      icon: <Phone className="w-4 h-4" />,
+      label: "phone",
       value: "+91 9764201151",
-      href: "tel:+919764201151"
+      href: "tel:+919764201151",
     },
     {
-      icon: <MapPin className="w-5 h-5" />,
-      label: "Location",
+      icon: <MapPin className="w-4 h-4" />,
+      label: "location",
       value: "Thane, Maharashtra, India",
-      href: null
-    }
+      href: null,
+    },
   ];
 
   const socialLinks = [
-    {
-      icon: <Github className="w-5 h-5" />,
-      label: "GitHub",
-      href: "https://github.com/manishsambari"
-    },
-    {
-      icon: <Linkedin className="w-5 h-5" />,
-      label: "LinkedIn", 
-      href: "https://linkedin.com/in/manish-sambari"
-    },
-    {
-      icon: <Instagram className="w-5 h-5" />,
-      label: "Instagram",
-      href: "https://instagram.com/manish.sambari"
-    },
-    {
-      icon: <MessageCircle className="w-5 h-5" />,
-      label: "X",
-      href: "https://x.com/sambarimanish"
-    }
+    { icon: <Github className="w-4 h-4" />, label: "GitHub", href: "https://github.com/manishsambari" },
+    { icon: <Linkedin className="w-4 h-4" />, label: "LinkedIn", href: "https://linkedin.com/in/manish-sambari" },
+    { icon: <Instagram className="w-4 h-4" />, label: "Instagram", href: "https://instagram.com/manish.sambari" },
+    { icon: <MessageCircle className="w-4 h-4" />, label: "X", href: "https://x.com/sambarimanish" },
   ];
 
   return (
     <section className="py-20 px-4">
-      <div className="max-w-4xl mx-auto">
-        <motion.div 
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 100, rotateX: 90 }}
-          whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
-          transition={{ duration: 1.5, type: "spring", stiffness: 60 }}
-          viewport={{ once: true }}
-        >
-          <motion.h2 
-            className="text-4xl md:text-5xl font-bold mb-4"
-            initial={{ letterSpacing: "0.5em", opacity: 0 }}
-            whileInView={{ letterSpacing: "normal", opacity: 1 }}
-            transition={{ duration: 1, delay: 0.3 }}
-            viewport={{ once: true }}
-          >
-            Let's <span className="gradient-text">Connect</span>
-          </motion.h2>
-          <motion.p 
-            className="text-xl text-muted-foreground max-w-2xl mx-auto"
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            viewport={{ once: true }}
-          >
-            Let's discuss your next project and bring your ideas to life
-          </motion.p>
-        </motion.div>
+      <div className="max-w-5xl mx-auto">
+        <div className="mb-12">
+          <div className="font-mono text-xs uppercase tracking-widest text-muted-foreground mb-2">
+            <span className="text-primary">$</span> ping manish --reach-out
+          </div>
+          <h2 className="font-mono text-3xl md:text-4xl font-bold">
+            <span className="text-primary">##</span> Let&apos;s Connect
+          </h2>
+          <p className="font-mono text-sm text-muted-foreground mt-2">
+            // available for freelance, full-time, &amp; collaborations
+          </p>
+        </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          {/* Contact Information */}
-          <motion.div
-            initial={{ opacity: 0, x: -150, rotateY: -90 }}
-            whileInView={{ opacity: 1, x: 0, rotateY: 0 }}
-            transition={{ duration: 1, type: "spring", stiffness: 70 }}
-            viewport={{ once: true }}
-            whileHover={{ scale: 1.03, rotateY: 5 }}
-          >
-          <Card className="glass-card transition-all duration-300">
-            <CardHeader>
-              <CardTitle className="text-2xl">Get In Touch</CardTitle>
-              <p className="text-muted-foreground">
-                Available for freelance projects, full-time opportunities, and collaborations.
-              </p>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              {/* Contact Details */}
-              <div className="space-y-4">
-                {contactInfo.map((contact, index) => (
-                  <div key={index} className="flex items-center gap-4 p-3 rounded-lg hover:bg-muted/20 transition-colors">
-                    <div className="p-2 rounded-lg bg-primary/10 text-primary">
-                      {contact.icon}
-                    </div>
-                    <div className="flex-1">
-                      <p className="text-sm text-muted-foreground">{contact.label}</p>
-                      {contact.href ? (
-                        <a href={contact.href} className="font-medium hover:text-primary transition-colors">
-                          {contact.value}
+        <div className="grid md:grid-cols-2 gap-5">
+          {/* Contact info */}
+          <div className="term-card">
+            <div className="border-b border-border bg-secondary/30 px-4 py-2 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
+              ./contact.info
+            </div>
+            <div className="p-5 space-y-4">
+              <div className="space-y-2">
+                {contactInfo.map((c) => (
+                  <div
+                    key={c.label}
+                    className="flex items-center gap-3 px-3 py-2 border border-border bg-secondary/20"
+                  >
+                    <span className="text-primary">{c.icon}</span>
+                    <div className="flex-1 min-w-0">
+                      <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
+                        {c.label}
+                      </div>
+                      {c.href ? (
+                        <a
+                          href={c.href}
+                          className="font-mono text-sm text-foreground hover:text-primary break-all"
+                        >
+                          {c.value}
                         </a>
                       ) : (
-                        <p className="font-medium">{contact.value}</p>
+                        <div className="font-mono text-sm text-foreground">{c.value}</div>
                       )}
                     </div>
                   </div>
                 ))}
               </div>
 
-              {/* Social Links */}
-              <div className="border-t pt-6">
-                <h4 className="font-semibold mb-4">Connect With Me</h4>
+              <div className="pt-4 border-t border-border">
+                <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-3">
+                  // socials
+                </div>
                 <div className="flex flex-wrap gap-2">
-                  {socialLinks.map((social, index) => (
-                    <Button key={index} variant="outline" size="sm" asChild>
-                      <a href={social.href} className="flex items-center gap-2">
-                        {social.icon}
-                        {social.label}
-                      </a>
-                    </Button>
+                  {socialLinks.map((s) => (
+                    <a
+                      key={s.label}
+                      href={s.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-2 px-3 py-1.5 text-xs font-mono uppercase tracking-wider border border-border text-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors"
+                    >
+                      {s.icon}
+                      {s.label}
+                    </a>
                   ))}
                 </div>
               </div>
 
-              {/* Status Badge */}
-              <div className="border-t pt-6">
-                <Badge variant="secondary" className="w-fit px-4 py-2 bg-gradient-to-r from-white/10 to-gray-100/10 text-white border border-white/20">
-                  💼 Open to Opportunities
-                </Badge>
+              <div className="pt-4 border-t border-border">
+                <span className="status-pill">Open to Opportunities</span>
               </div>
-            </CardContent>
-          </Card>
-          </motion.div>
+            </div>
+          </div>
 
-          {/* Quick Actions */}
-          <motion.div
-            initial={{ opacity: 0, x: 150, rotateY: 90 }}
-            whileInView={{ opacity: 1, x: 0, rotateY: 0 }}
-            transition={{ duration: 1, delay: 0.2, type: "spring", stiffness: 70 }}
-            viewport={{ once: true }}
-            whileHover={{ scale: 1.03, rotateY: -5 }}
-          >
-          <Card className="glass-card transition-all duration-300">
-            <CardHeader>
-              <CardTitle className="text-2xl">Quick Actions</CardTitle>
-              <p className="text-muted-foreground">
-                Choose how you'd like to connect and collaborate.
-              </p>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <Button 
-                className="w-full justify-start gap-3 h-14 text-left bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700" 
-                size="lg"
-                onClick={() => window.open('https://wa.me/919764201151', '_blank')}
+          {/* Quick actions */}
+          <div className="term-card">
+            <div className="border-b border-border bg-secondary/30 px-4 py-2 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
+              ./quick_actions.sh
+            </div>
+            <div className="p-5 space-y-3">
+              <button
+                onClick={() => window.open("https://wa.me/919764201151", "_blank")}
+                className="w-full text-left flex items-center gap-3 px-4 py-3 border border-border bg-secondary/20 hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors group"
               >
-                <MessageCircle className="w-5 h-5" />
+                <Send className="w-5 h-5 text-primary group-hover:text-primary-foreground" />
                 <div>
-                  <div className="font-semibold">Send a Message</div>
-                  <div className="text-sm opacity-80">Chat on WhatsApp</div>
+                  <div className="font-mono text-sm font-bold uppercase tracking-wider">
+                    send a message
+                  </div>
+                  <div className="font-mono text-xs opacity-80">// chat on whatsapp</div>
                 </div>
-              </Button>
-              
-              <Button 
-                variant="outline" 
-                className="w-full justify-start gap-3 h-14 text-left border-2 hover:border-primary/50 hover:bg-primary/5" 
-                size="lg"
-                onClick={() => window.open('tel:+919764201151', '_self')}
-              >
-                <Phone className="w-5 h-5" />
-                <div>
-                  <div className="font-semibold">Schedule a Call</div>
-                  <div className="text-sm opacity-80">Direct call to discuss opportunities</div>
-                </div>
-              </Button>
-              
-              <Button 
-                variant="outline" 
-                className="w-full justify-start gap-3 h-14 text-left border-2 hover:border-primary/50 hover:bg-primary/5" 
-                size="lg"
-                onClick={() => window.open('https://github.com/manishsambari', '_blank')}
-              >
-                <Github className="w-5 h-5" />
-                <div>
-                  <div className="font-semibold">View My Code</div>
-                  <div className="text-sm opacity-80">Explore my GitHub repositories</div>
-                </div>
-              </Button>
+              </button>
 
+              <button
+                onClick={() => window.open("tel:+919764201151", "_self")}
+                className="w-full text-left flex items-center gap-3 px-4 py-3 border border-border bg-secondary/20 hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors group"
+              >
+                <Phone className="w-5 h-5 text-primary group-hover:text-primary-foreground" />
+                <div>
+                  <div className="font-mono text-sm font-bold uppercase tracking-wider">
+                    schedule a call
+                  </div>
+                  <div className="font-mono text-xs opacity-80">// discuss opportunities</div>
+                </div>
+              </button>
 
-              {/* Specializations */}
-              <div className="pt-6 border-t">
-                <h4 className="font-semibold mb-3">Open to opportunities in:</h4>
-                <div className="flex flex-wrap gap-2">
-                  {["Full-Stack Development", "Web Applications", "Discord Bots", "E-commerce", "Problem Solving"].map((spec) => (
-                    <Badge key={spec} variant="outline" className="text-xs">
+              <button
+                onClick={() => window.open("https://github.com/manishsambari", "_blank")}
+                className="w-full text-left flex items-center gap-3 px-4 py-3 border border-border bg-secondary/20 hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors group"
+              >
+                <Github className="w-5 h-5 text-primary group-hover:text-primary-foreground" />
+                <div>
+                  <div className="font-mono text-sm font-bold uppercase tracking-wider">
+                    view my code
+                  </div>
+                  <div className="font-mono text-xs opacity-80">// explore github repos</div>
+                </div>
+              </button>
+
+              <div className="pt-4 border-t border-border">
+                <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-3">
+                  // open_to:
+                </div>
+                <div className="flex flex-wrap gap-1.5">
+                  {[
+                    "Full-Stack Development",
+                    "Web Applications",
+                    "Discord Bots",
+                    "E-commerce",
+                    "Problem Solving",
+                  ].map((spec) => (
+                    <span key={spec} className="term-chip">
                       {spec}
-                    </Badge>
+                    </span>
                   ))}
                 </div>
               </div>
-            </CardContent>
-          </Card>
-          </motion.div>
+            </div>
+          </div>
         </div>
-
       </div>
     </section>
   );
