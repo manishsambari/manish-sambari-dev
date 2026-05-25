@@ -1,5 +1,6 @@
 import { Mail, Phone, MapPin, Github, Linkedin, MessageCircle, Instagram, Send } from "lucide-react";
 import { motion } from "framer-motion";
+import manishGym from "@/assets/manish-gym.jpg";
 
 const Contact = () => {
   const contactInfo = [
@@ -117,12 +118,63 @@ const Contact = () => {
             </motion.button>
           </div>
 
+          {/* Off-the-clock photo tile */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.45, delay: 0.18 }}
+            className="bento col-span-12 md:col-span-5 p-3 pop-mint relative overflow-hidden"
+          >
+            <span className="sticker bg-card absolute -top-3 -right-3 rotate-6 wobble z-10">
+              ✦ off the clock
+            </span>
+            <div className="border-[3px] border-foreground rounded-xl overflow-hidden">
+              <img
+                src={manishGym}
+                alt="Manish at the gym"
+                className="w-full h-72 md:h-80 object-cover"
+                loading="lazy"
+              />
+            </div>
+            <div className="flex items-center justify-between gap-2 px-1 pt-3">
+              <p className="font-display font-bold text-sm">
+                Not always at the keyboard.
+              </p>
+              <span className="text-xs font-bold text-foreground/60">
+                ./irl.jpg
+              </span>
+            </div>
+          </motion.div>
+
+          {/* Personality snippet tile */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.45, delay: 0.22 }}
+            className="bento col-span-12 md:col-span-7 p-6 bg-card flex flex-col justify-center"
+          >
+            <span className="section-eyebrow pop-pink self-start mb-3">
+              ★ when I'm not coding
+            </span>
+            <p className="font-display text-xl md:text-2xl font-bold leading-snug mb-3">
+              Lifting heavy, chasing PRs, and occasionally{" "}
+              <span className="bg-foreground text-background px-1">touching grass</span>.
+            </p>
+            <p className="text-foreground/75 leading-relaxed">
+              Outside of the editor, you'll find me at the gym, exploring Mumbai, or
+              doom-scrolling design portfolios for inspiration. Discipline at the gym
+              translates surprisingly well into shipping code.
+            </p>
+          </motion.div>
+
           {/* Socials row */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: 0.2 }}
+            transition={{ duration: 0.4, delay: 0.25 }}
             className="bento p-5 col-span-12 bg-card"
           >
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">

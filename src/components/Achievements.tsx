@@ -46,7 +46,7 @@ const Achievements = () => {
               transition={{ duration: 0.4, delay: i * 0.06 }}
               className={`bento p-6 ${h.bg} relative text-center`}
             >
-              <span className="sticker pop-card absolute -top-3 -right-3 rotate-6 wobble-soft">
+              <span className="sticker bg-card absolute -top-3 -right-3 rotate-6 wobble-soft">
                 {h.sticker}
               </span>
               <div className="inline-flex items-center justify-center w-16 h-16 bg-card border-2 border-foreground rounded-full mb-4 float-slow">

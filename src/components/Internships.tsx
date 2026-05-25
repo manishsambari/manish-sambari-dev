@@ -83,7 +83,7 @@ const Internships = () => {
               className={`bento p-6 md:p-8 relative ${it.bg}`}
             >
               {it.current && (
-                <span className="sticker pop-card absolute -top-3 -right-3 rotate-6 wobble">
+                <span className="sticker bg-card absolute -top-3 -right-3 rotate-6 wobble">
                   <span className="w-2 h-2 rounded-full bg-foreground animate-pulse" />
                   current role
                 </span>

@@ -7,21 +7,47 @@ import Education from "@/components/Education";
 import Skills from "@/components/Skills";
 import Achievements from "@/components/Achievements";
 import Contact from "@/components/Contact";
+import FAQ from "@/components/FAQ";
 import FloatingElements from "@/components/FloatingElements";
+import ScrollProgress from "@/components/ScrollProgress";
+import Marquee from "@/components/Marquee";
 
 const Index = () => {
   return (
     <div className="min-h-screen relative">
+      <ScrollProgress />
       <FloatingElements />
       <Navigation />
       <main className="relative z-10">
         <Hero />
+
+        <Marquee bg="pop-yellow" />
+
         <div id="projects"><Projects /></div>
         <div id="internships"><Internships /></div>
         <div id="experience"><Experience /></div>
+
+        <Marquee
+          bg="pop-pink"
+          reverse
+          items={[
+            "LEARNING IN PUBLIC",
+            "✦",
+            "READING DOCS > WATCHING TUTORIALS",
+            "✦",
+            "TYPESCRIPT EVERYWHERE",
+            "✦",
+            "OBSESSED WITH UX",
+            "✦",
+            "ALWAYS SHIPPING",
+            "✦",
+          ]}
+        />
+
         <div id="education"><Education /></div>
         <div id="skills"><Skills /></div>
         <div id="achievements"><Achievements /></div>
+        <FAQ />
         <div id="contact"><Contact /></div>
       </main>
 

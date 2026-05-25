@@ -160,7 +160,7 @@ const Hero = () => {
             <div className="flex flex-wrap gap-2">
               {[
                 { t: "React",      c: "pop-blue" },
-                { t: "Next.js",    c: "pop-card" },
+                { t: "Next.js",    c: "bg-card" },
                 { t: "TypeScript", c: "pop-blue" },
                 { t: "Node.js",    c: "pop-green" },
                 { t: "PostgreSQL", c: "pop-purple" },
@@ -174,35 +174,48 @@ const Hero = () => {
             </div>
           </motion.div>
 
-          {/* Contact mini tile */}
+          {/* Now tile — live-feeling status */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.45 }}
-            className="bento col-span-12 md:col-span-5 p-5 pop-coral"
+            className="bento col-span-12 md:col-span-5 p-5 pop-coral relative"
           >
-            <p className="font-display font-bold text-sm uppercase tracking-wider mb-3">
-              ✉ say hi
-            </p>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex items-center justify-between mb-3">
+              <p className="font-display font-bold text-sm uppercase tracking-wider inline-flex items-center gap-2">
+                <span className="relative flex w-2.5 h-2.5">
+                  <span className="absolute inline-flex h-full w-full rounded-full bg-foreground opacity-60 animate-ping" />
+                  <span className="relative inline-flex w-2.5 h-2.5 rounded-full bg-foreground" />
+                </span>
+                Right now
+              </p>
+              <span className="text-xs font-bold text-foreground/60">/now</span>
+            </div>
+            <ul className="space-y-1.5 text-sm">
+              <li className="flex gap-2"><span className="font-bold">⌁</span> Building production tools @ KVAR Technologies</li>
+              <li className="flex gap-2"><span className="font-bold">⌁</span> Deep-diving Next.js 15 + Server Components</li>
+              <li className="flex gap-2"><span className="font-bold">⌁</span> Picking up Go for the next side project</li>
+              <li className="flex gap-2"><span className="font-bold">⌁</span> Reading <em>The Pragmatic Programmer</em></li>
+            </ul>
+            <div className="flex flex-wrap gap-2 pt-3 mt-3 border-t-2 border-dashed border-foreground/30">
               <a
                 href="mailto:sambarimanish@gmail.com"
-                className="inline-flex items-center gap-2 px-3 py-1.5 border-2 border-foreground rounded-full bg-card text-sm font-semibold hover:-translate-y-0.5 transition-transform"
+                className="inline-flex items-center gap-1.5 px-2.5 py-1 border-2 border-foreground rounded-full bg-card text-xs font-bold hover:-translate-y-0.5 transition-transform"
               >
-                <Mail className="w-3.5 h-3.5" />
+                <Mail className="w-3 h-3" />
                 Email
               </a>
               <a
                 href="https://github.com/manishsambari"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 px-3 py-1.5 border-2 border-foreground rounded-full bg-card text-sm font-semibold hover:-translate-y-0.5 transition-transform"
+                className="inline-flex items-center gap-1.5 px-2.5 py-1 border-2 border-foreground rounded-full bg-card text-xs font-bold hover:-translate-y-0.5 transition-transform"
               >
-                <Github className="w-3.5 h-3.5" />
+                <Github className="w-3 h-3" />
                 GitHub
               </a>
-              <span className="inline-flex items-center gap-2 px-3 py-1.5 border-2 border-foreground rounded-full bg-card text-sm font-semibold">
-                <MapPin className="w-3.5 h-3.5" />
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 border-2 border-foreground rounded-full bg-card text-xs font-bold">
+                <MapPin className="w-3 h-3" />
                 Thane, IN
               </span>
             </div>

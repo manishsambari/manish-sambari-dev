@@ -220,13 +220,27 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* Marquee — seamless horizontal loop (track is duplicated, scroll 50%) */
+.marquee-track {
+  animation: marquee 30s linear infinite;
+  will-change: transform;
+}
+.marquee-reverse {
+  animation-direction: reverse;
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .float-slow,
   .float-slower,
   .wobble,
   .wobble-soft,
-  .animate-fade-up {
+  .animate-fade-up,
+  .marquee-track {
     animation: none;
   }
 }

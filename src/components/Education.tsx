@@ -63,7 +63,7 @@ const Education = () => {
               transition={{ duration: 0.4, delay: i * 0.05 }}
               className={`bento p-5 md:p-6 ${e.bg} relative`}
             >
-              <span className="sticker pop-card absolute -top-3 -right-3 rotate-3 wobble-soft">
+              <span className="sticker bg-card absolute -top-3 -right-3 rotate-3 wobble-soft">
                 {e.period}
               </span>
               <div className="inline-flex items-center justify-center w-12 h-12 bg-card border-2 border-foreground rounded-full mb-3">

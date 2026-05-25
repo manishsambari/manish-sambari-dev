@@ -102,13 +102,16 @@ const Projects = () => {
                 transition={{ duration: 0.45, delay: (i % 4) * 0.05 }}
                 className={`bento p-6 md:p-7 relative flex flex-col ${p.bg} ${span}`}
               >
-                <span className="sticker pop-card absolute top-4 right-4 -rotate-3 wobble-soft">
+                <span className="sticker bg-card absolute top-4 right-4 -rotate-3 wobble-soft">
                   {p.sticker}
                 </span>
 
-                <div className="flex items-center gap-2 mb-3">
+                <div className="flex items-center justify-between gap-2 mb-3">
                   <span className="text-xs font-bold uppercase tracking-wider px-2 py-1 bg-card border-2 border-foreground rounded-full">
                     {p.category}
+                  </span>
+                  <span className="font-display text-xs font-bold text-foreground/60 tracking-widest">
+                    {String(i + 1).padStart(2, "0")} / {String(projects.length).padStart(2, "0")}
                   </span>
                 </div>
 
