@@ -11,6 +11,7 @@ import FAQ from "@/components/FAQ";
 import FloatingElements from "@/components/FloatingElements";
 import ScrollProgress from "@/components/ScrollProgress";
 import Marquee from "@/components/Marquee";
+import PullQuote from "@/components/PullQuote";
 
 const Index = () => {
   return (
@@ -26,6 +27,11 @@ const Index = () => {
         <div id="projects"><Projects /></div>
         <div id="internships"><Internships /></div>
         <div id="experience"><Experience /></div>
+
+        <PullQuote
+          quote="Code is read more often than it is written — so I write it like a letter to my future self."
+          attribution="— Manish, after his third refactor"
+        />
 
         <Marquee
           bg="pop-pink"

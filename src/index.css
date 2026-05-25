@@ -10,8 +10,16 @@
 */
 
 @layer base {
+  /* Theme variants — toggled by [data-theme] on <html> via useTheme */
+  html[data-theme="blush"] {
+    --background: 350 100% 96%;          /* soft blush pink */
+  }
+  html[data-theme="sky"] {
+    --background: 200 70% 94%;           /* pale sky blue */
+  }
+
   :root {
-    --background: 48 33% 96%;            /* warm cream */
+    --background: 48 33% 96%;            /* warm cream (default) */
     --foreground: 0 0% 8%;                /* near-black ink */
 
     --card: 0 0% 100%;

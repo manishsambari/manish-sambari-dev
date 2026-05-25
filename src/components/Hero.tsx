@@ -1,9 +1,16 @@
 import manishPhoto from "@/assets/manish-photo.jpg";
-import { Download, ArrowRight, Mail, Github, MapPin, Sparkles } from "lucide-react";
+import { Download, ArrowRight, Mail, Github, MapPin, Sparkles, Clock } from "lucide-react";
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
+import { useMumbaiTime } from "@/hooks/useMumbaiTime";
+import { useCountUp } from "@/hooks/useCountUp";
 
 const Hero = () => {
+  const mumbaiTime = useMumbaiTime();
+  const proj = useCountUp(15, { suffix: "+" });
+  const bot = useCountUp(400, { suffix: "+", duration: 1400 });
+  const cert = useCountUp(5, { suffix: "+", duration: 900 });
+
   const downloadResume = () => {
     const link = document.createElement("a");
     link.href = "/ManishSResume.pdf?v=" + Date.now();
@@ -89,14 +96,19 @@ const Hero = () => {
             </div>
           </motion.div>
 
-          {/* Stat tiles */}
+          {/* Stat tiles — count up on viewport enter */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             className="bento col-span-4 md:col-span-3 p-5 pop-blue text-center"
           >
-            <div className="font-display text-4xl md:text-5xl font-bold">15+</div>
+            <div
+              ref={proj.ref as React.RefObject<HTMLDivElement>}
+              className="font-display text-4xl md:text-5xl font-bold tabular-nums"
+            >
+              {proj.display}
+            </div>
             <div className="text-xs md:text-sm font-bold uppercase tracking-wider mt-1">
               Projects
             </div>
@@ -107,7 +119,12 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.25 }}
             className="bento col-span-4 md:col-span-3 p-5 pop-purple text-center"
           >
-            <div className="font-display text-4xl md:text-5xl font-bold">400+</div>
+            <div
+              ref={bot.ref as React.RefObject<HTMLDivElement>}
+              className="font-display text-4xl md:text-5xl font-bold tabular-nums"
+            >
+              {bot.display}
+            </div>
             <div className="text-xs md:text-sm font-bold uppercase tracking-wider mt-1">
               Bot Commands
             </div>
@@ -118,7 +135,12 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="bento col-span-4 md:col-span-3 p-5 pop-mint text-center"
           >
-            <div className="font-display text-4xl md:text-5xl font-bold">5+</div>
+            <div
+              ref={cert.ref as React.RefObject<HTMLDivElement>}
+              className="font-display text-4xl md:text-5xl font-bold tabular-nums"
+            >
+              {cert.display}
+            </div>
             <div className="text-xs md:text-sm font-bold uppercase tracking-wider mt-1">
               Certifications
             </div>
@@ -214,9 +236,12 @@ const Hero = () => {
                 <Github className="w-3 h-3" />
                 GitHub
               </a>
-              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 border-2 border-foreground rounded-full bg-card text-xs font-bold">
-                <MapPin className="w-3 h-3" />
-                Thane, IN
+              <span
+                className="inline-flex items-center gap-1.5 px-2.5 py-1 border-2 border-foreground rounded-full bg-card text-xs font-bold tabular-nums"
+                title="Live Mumbai time"
+              >
+                <Clock className="w-3 h-3" />
+                Mumbai · {mumbaiTime}
               </span>
             </div>
           </motion.div>

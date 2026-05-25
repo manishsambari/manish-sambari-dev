@@ -1,8 +1,16 @@
 import { useState } from "react";
-import { Menu, X, Download } from "lucide-react";
+import { Menu, X, Download, Palette } from "lucide-react";
+import { useTheme } from "@/hooks/useTheme";
+
+const THEME_DOTS: Record<string, string> = {
+  cream: "bg-[hsl(48_33%_80%)]",
+  blush: "bg-[hsl(350_85%_82%)]",
+  sky: "bg-[hsl(200_70%_78%)]",
+};
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { theme, cycle } = useTheme();
 
   const navItems = [
     { label: "Projects", href: "#projects" },
@@ -48,14 +56,24 @@ const Navigation = () => {
             ))}
           </div>
 
-          {/* Resume */}
-          <button
-            onClick={downloadResume}
-            className="hidden md:inline-flex items-center gap-1.5 px-4 py-2 text-sm font-bold border-2 border-foreground rounded-full pop-yellow shadow-brutal-sm hover:-translate-y-0.5 hover:translate-x-0 transition-transform"
-          >
-            <Download className="w-3.5 h-3.5" />
-            Resume
-          </button>
+          {/* Theme cycle + Resume */}
+          <div className="hidden md:flex items-center gap-2">
+            <button
+              onClick={cycle}
+              title={`Theme: ${theme} (click to change)`}
+              aria-label="Cycle background theme"
+              className={`w-9 h-9 inline-flex items-center justify-center border-2 border-foreground rounded-full ${THEME_DOTS[theme]} hover:-translate-y-0.5 transition-transform`}
+            >
+              <Palette className="w-3.5 h-3.5" />
+            </button>
+            <button
+              onClick={downloadResume}
+              className="inline-flex items-center gap-1.5 px-4 py-2 text-sm font-bold border-2 border-foreground rounded-full pop-yellow shadow-brutal-sm hover:-translate-y-0.5 hover:translate-x-0 transition-transform"
+            >
+              <Download className="w-3.5 h-3.5" />
+              Resume
+            </button>
+          </div>
 
           {/* Mobile toggle */}
           <button
